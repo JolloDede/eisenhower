@@ -5,9 +5,13 @@ Daten bank
   db felder für eingabe
 Eingabe html von daten für datenbank
 Login index
+Css für index
+Idee für obe a de Navigation
 
 
 Nice to have
+Zeistrahl und aufgaben die zu erledigen sind
 
 
 Later
+Games???
