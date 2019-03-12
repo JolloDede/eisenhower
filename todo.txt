@@ -1,0 +1,13 @@
+Wichtig
+
+Daten bank
+  mit 3 user
+  db felder für eingabe
+Eingabe html von daten für datenbank
+Login index
+
+
+Nice to have
+
+
+Later
