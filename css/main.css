@@ -1,0 +1,48 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  width: 100%;
+  height: 100vh;
+}
+
+main{
+  width: 80%;
+  margin: 0 auto;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+#content{
+  line-height: 0;
+  letter-spacing: 0;
+  min-height: 100px;
+}
+
+#top-left,
+#top-right,
+#bot-left,
+#bot-right {
+  background-color: white;
+  border: 1px solid black;
+  height: 100px;
+}
+/*
+#top-right{
+  width: 50%;
+  height: 100px;
+}
+
+#bot-left{
+  width: 50%;
+  height: 100px;
+}
+
+#bot-right{
+  width: 50%;
+  height: 100px;
+} */
