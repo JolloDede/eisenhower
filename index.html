@@ -2,35 +2,39 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Home</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="author" content="Dennis & Marcel" />
+  <title>Dennis' & Marcel's Projekt</title>
   <link href="css/main.css" rel="Stylesheet">
 </head>
 
 <body>
   <header>
-    <nav id="menu-nav">
+    <nav>
       <ul>
-        <li> <a href="#">Home</a> </li>
-        <li> <a href="#">no mehr</a> </li>
+        <li><a href="pages/eisenhower.html">Eisenhower</a></li>
+        <li><a href="https://github.com/jollodede" target="_blank">Dennis</a></li>
+        <li><a href="https://github.com/thebauzz" target="_blank">Marcel</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <form action="" method="post">
-      <input name="uname" type="text" id="uname" placeholder="&nbsp;" required="" autofocus="">
-      <label class="form--label" for="uname">Username</label><br>
+    <form action="lol.php" method="post">
+      <fieldset>
+        <legend>LOGIN</legend>
+        <input name="uname" type="text" id="uname" placeholder="&nbsp;" required autofocus>
+        <label class="form--label" for="uname">Username</label><br>
 
-      <input name="passw" type="text" id="passw" placeholder="&nbsp;" required="">
-      <label class="form--label" for="passw">Password</label><br>
+        <input name="passw" type="text" id="passw" placeholder="&nbsp;" required>
+        <label class="form--label" for="passw">Password</label><br>
+
+        <input type="submit" style="position: absolute; left: -9999px;" tabindex="-1" />
+      </fieldset>
     </form>
-
-
-    <img src="img/seitbsp.png" alt="Seite Beispiel">
   </main>
   <footer>
-    Bild wer e idee zum sprache ane tue wommer brucht hend
-    <img src="img/img1.png" alt="Placeholder">
   </footer>
 </body>
 

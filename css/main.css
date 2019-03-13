@@ -1,15 +1,96 @@
+/*
+ *
+ * default styling
+*/
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,700i,900");
 * {
-  font-family: arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 html, body {
+  font-family: "Lato", sans-serif;
   width: 100%;
   height: 100vh;
 }
+/*
+ *
+ * Navigation
+*/
+li {
+  display: inline-block;
+}
+
+/*
+ *
+ * index.html
+*/
+form {
+  width: 350px;
+  margin: 50px auto 0;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+fieldset {
+  position: relative;
+  padding: 50px 50px 20px 50px;
+  border: 1px solid black;
+}
+
+legend {
+  position: absolute;
+  top: -9px;
+  left: 5px;
+  padding: 0 5px;
+  font-weight: bold;
+  background: white;
+}
+
+.form--label {
+  display: block;
+  position: relative;
+  left: 5px;
+  top: -25px;
+  color: #555555;
+  transition: all 0.2s;
+  z-index: -5;
+}
+
+input:first-child {
+  margin-top: 40px;
+}
+
+input[type="text"] {
+  width: 250px;
+  padding: 3px 3px;
+  border-radius: 5px;
+  font-size: 17px;
+  border: 2px solid black;
+  background: transparent;
+  color: #666666;
+}
+
+input[type="text"]:focus {
+  border: 2px solid #cc2020;
+  outline: none;
+}
+
+input[name="uname"]:focus ~ label[for="uname"],
+input[name="passw"]:focus ~ label[for="passw"],
+input[name="uname"]:not(:placeholder-shown) ~ label[for="uname"],
+input[name="passw"]:not(:placeholder-shown) ~ label[for="passw"] {
+  color: #000000;
+  transform: scale(0.9) translate(-20px, -28px);
+}
+
+/*
+ *
+ * eisenhower.html
+*/
 .eh--container {
   width: 80%;
   margin: 40px auto 0;
+  height: 480px;
 }
 
 .eh--element {
@@ -44,44 +125,4 @@ html, body {
 }
 .eh--element p {
   padding: 2px 0 0 10px;
-}
-
-input:first-child { margin-top: 40px; }
-
-form {
-  width: 300px;
-  margin-left: 100px;
-}
-
-.form--label {
-  display: block;
-  position: relative;
-  left: 5px;
-  top: -23px;
-  color: #555555;
-  transition: all 0.2s;
-  z-index: -5;
-}
-
-input[type="text"] {
-  width: 250px;
-  padding: 3px 3px;
-  border-radius: 5px;
-  font-size: 17px;
-  border: 2px solid black;
-  background: transparent;
-  color: #666666;
-}
-
-input[type="text"]:focus {
-  border: 2px solid #cc2020;
-  outline: none;
-}
-
-input[name="uname"]:focus ~ label[for="uname"],
-input[name="passw"]:focus ~ label[for="passw"],
-input[name="uname"]:not(:placeholder-shown) ~ label[for="uname"],
-input[name="passw"]:not(:placeholder-shown) ~ label[for="passw"] {
-  color: #000000;
-  transform: scale(0.9) translate(-20px, -28px);
 }
