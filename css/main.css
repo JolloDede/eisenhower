@@ -3,22 +3,26 @@
   margin: 0;
   padding: 0;
 }
-.main {
+html, body {
+  width: 100%;
+  height: 100vh;
+}
+.eh--container {
   width: 80%;
   margin: 40px auto 0;
 }
 
-.child {
+.eh--element {
   float: left;
   position: relative;
   width: 50%;
   border-bottom: 2px solid black;
 }
-.child:nth-child(1),
-.child:nth-child(2) {
+.eh--element:nth-child(1),
+.eh--element:nth-child(2) {
   border-top: 2px solid black;
 }
-.child:nth-child(odd)::after {
+.eh--element:nth-child(odd)::after {
   content: "";
   position: absolute;
   top: 0;
@@ -28,16 +32,56 @@
   background: black;
 }
 
-.child h1 {
+.eh--element h1 {
   padding: 2px 0 0 10px;
   border-bottom: 1px solid black;
   font-size: 20px;
   font-weight: bold;
 }
-.child .eisenhower--content {
+.eh--element .eh--content {
   overflow-y: scroll;
   height: 200px;
 }
-.child p {
+.eh--element p {
   padding: 2px 0 0 10px;
+}
+
+input:first-child { margin-top: 40px; }
+
+form {
+  width: 300px;
+  margin-left: 100px;
+}
+
+.form--label {
+  display: block;
+  position: relative;
+  left: 5px;
+  top: -23px;
+  color: #555555;
+  transition: all 0.2s;
+  z-index: -5;
+}
+
+input[type="text"] {
+  width: 250px;
+  padding: 3px 3px;
+  border-radius: 5px;
+  font-size: 17px;
+  border: 2px solid black;
+  background: transparent;
+  color: #666666;
+}
+
+input[type="text"]:focus {
+  border: 2px solid #cc2020;
+  outline: none;
+}
+
+input[name="uname"]:focus ~ label[for="uname"],
+input[name="passw"]:focus ~ label[for="passw"],
+input[name="uname"]:not(:placeholder-shown) ~ label[for="uname"],
+input[name="passw"]:not(:placeholder-shown) ~ label[for="passw"] {
+  color: #000000;
+  transform: scale(0.9) translate(-20px, -28px);
 }
