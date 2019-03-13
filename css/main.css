@@ -10,7 +10,6 @@
 html, body {
   font-family: "Lato", sans-serif;
   width: 100%;
-  height: 100vh;
 }
 /*
  *
@@ -119,6 +118,9 @@ input[name="passw"]:not(:placeholder-shown) ~ label[for="passw"] {
   border-bottom: 1px solid black;
   font-size: 20px;
   font-weight: bold;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 .eh--element .eh--content {
   overflow-y: scroll;
@@ -127,3 +129,8 @@ input[name="passw"]:not(:placeholder-shown) ~ label[for="passw"] {
 .eh--element p {
   padding: 2px 0 0 10px;
 }
+
+.nwnd h1 { background: #c0e8a0; }
+.wnd  h1 { background: #f5f78f; }
+.nwd  h1 { background: #f4d577; }
+.wd   h1 { background: #f79b9b; }
