@@ -19,7 +19,6 @@
           $sel = "SELECT * FROM `eisenhower`";
           $erg = mysqli_query($conn, $sel);
           if (mysqli_num_rows($erg) > 0){
-            echo "$erg";
             echo '<table border="1"\n>';
             while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)){
               echo "\t<tr>\n";
