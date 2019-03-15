@@ -31,6 +31,7 @@
     if (!$conn) {
       die("Connection failed");
     }else {
+      $u = $_SESSION["user"];
      ?>
 
     <div class="eh--container">
@@ -40,7 +41,7 @@
         <div class="eh--content">
           <p>1.content</p>
           <?php
-            $sel = "SELECT * FROM `eisenhower`";
+            $sel = "SELECT * FROM eisenhower where user='$u'";
             $erg = mysqli_query($conn, $sel);
             if (mysqli_num_rows($erg) > 0) {
               while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
