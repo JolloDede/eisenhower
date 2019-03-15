@@ -1,6 +1,6 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,6 +16,9 @@
       <ul>
         <li><a href="https://github.com/jollodede" target="_blank">Dennis</a></li>
         <li><a href="https://github.com/thebauzz" target="_blank">Marcel</a></li>
+        <?php
+          echo "<li><a href='pages/eisenhower.php'>Eisen Hower</a></li>"
+         ?>
       </ul>
     </nav>
   </header>
@@ -32,6 +35,11 @@
         <input type="submit" style="position: absolute; left: -9999px;" tabindex="-1" />
       </fieldset>
     </form>
+    <?php
+    if (isset($_SESSION["user"])) {
+      echo "Hallo ". $_SESSION["user"];
+    }
+     ?>
   </main>
   <footer>
     <h2>Was wurde gebraucht</h2>
