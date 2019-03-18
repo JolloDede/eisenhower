@@ -34,6 +34,7 @@
     </nav>
   </header>
   <main>
+    <p><?php echo $_SESSION['fail']; ?></p>
     <?php
       if (!$login) {
         echo

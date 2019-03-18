@@ -6,7 +6,8 @@
     $conn = mysqli_connect('localhost', $uname, $pw, 'eh');
     mysqli_set_charset($conn, "utf8");
     if (!$conn) {
-        die("Wrong Password ");
+      $_SESSION["fail"] = "Fail";
+      header("location:../index.php");
     } else {
       $_SESSION["user"] = $uname;
       $_SESSION["pw"] = $pw;
