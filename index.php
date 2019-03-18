@@ -9,6 +9,7 @@
   <meta name="author" content="Dennis & Marcel" />
   <title>Dennis' & Marcel's Projekt</title>
   <link href="css/main.css" rel="Stylesheet">
+  <script src="js/main.js"></script>
 </head>
 
 <body>
