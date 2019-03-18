@@ -97,11 +97,46 @@ legend {
   z-index: -5;
 }
 
+.form--imgholder {
+  position: relative;
+}
+
+.form--pwicon {
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  width: auto;
+  height: 20px;
+  cursor: pointer;
+}
+
+.form--pw::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  right: 13px;
+  top: 17px;
+  width: 0px;
+  border-radius: 50px;
+  background: #000000;
+  transition-duration: 0.3s;
+  transform: rotate(-40deg);
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.pwhidden .form--pw::before {
+  width: 21px;
+  right: 10px;
+  top: 12px;
+}
+
 input:first-child {
   margin-top: 40px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
   width: 250px;
   padding: 3px 3px;
   border-radius: 5px;
@@ -109,9 +144,13 @@ input[type="text"] {
   border: 2px solid #000000;
   background: transparent;
   color: #666666;
+  caret-color: #cc2020;
+  -moz-caret-color: #cc2020;
+  -webkit-caret-color: #cc2020;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="password"]:focus {
   border: 2px solid #cc2020;
   outline: none;
 }
