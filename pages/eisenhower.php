@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php session_start();
+  if (!isset($_SESSION["user"])) {
+    header("Location: ..");
+  }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -17,9 +21,7 @@
       <ul>
         <li><a href="https://github.com/jollodede" target="_blank">Dennis</a></li>
         <li><a href="https://github.com/thebauzz" target="_blank">Marcel</a></li>
-        <?php
-          echo "<li><a href='pages/eisenhower.php' target='_blank'>Eisen Hower</a></li>"
-         ?>
+        <li><a href="..">Startseite</a></li>
       </ul>
     </nav>
   </header>
@@ -45,11 +47,12 @@
           <?php
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
               if ($line["importance"] == 1) {
-                  echo "<p onclick=javascript:void(0)>";
-                  echo $line["link"];
-                  echo "</p>";
+                echo "<p onclick=javascript:void(0)>";
+                echo $line["link"];
+                echo "</p><br>";
               }
-          } ?>
+          }
+          ?>
         </div>
       </div>
 
@@ -60,13 +63,12 @@
           $erg = mysqli_query($conn, $sel);
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
               if ($line["importance"] == 1) {
-                  echo "<p>";
-                  foreach ($line as $value) {
-                      echo "$value ";
-                  }
-                  echo "</p>";
+                echo "<p onclick=javascript:void(0)>";
+                echo $line["link"];
+                echo "</p><br>";
               }
-          } ?>
+          }
+          ?>
         </div>
       </div>
 
@@ -77,13 +79,12 @@
           $erg = mysqli_query($conn, $sel);
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
               if ($line["importance"] == 0) {
-                  echo "<p>";
-                  foreach ($line as $value) {
-                      echo "$value ";
-                  }
-                  echo "</p>";
+                echo "<p onclick=javascript:void(0)>";
+                echo $line["link"];
+                echo "</p><br>";
               }
-          } ?>
+          }
+          ?>
         </div>
       </div>
 
@@ -94,20 +95,19 @@
           $erg = mysqli_query($conn, $sel);
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
               if ($line["importance"] == 0) {
-                  echo "<p>";
-                  foreach ($line as $value) {
-                      echo "$value ";
-                  }
-                  echo "</p>";
+                echo "<p onclick=javascript:void(0)>";
+                echo $line["link"];
+                echo "</p><br>";
               }
-          } ?>
+          }
+          ?>
         </div>
       </div>
     </div>
     <?php
         }
         mysqli_close($conn);
-    }
+      }
      ?>
   </main>
   <footer></footer>
