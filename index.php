@@ -1,6 +1,7 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +18,9 @@
         <li><a href="https://github.com/jollodede" target="_blank">Dennis</a></li>
         <li><a href="https://github.com/thebauzz" target="_blank">Marcel</a></li>
         <?php
-          echo "<li><a href='pages/eisenhower.php'>Eisen Hower</a></li>"
+          if (isset($_SESSION["user"])) {
+            echo "<li><a href='pages/eisenhower.php'>Eisen Hower</a></li>";
+          }
          ?>
       </ul>
     </nav>
@@ -37,7 +40,7 @@
     </form>
     <?php
     if (isset($_SESSION["user"])) {
-      echo "Hallo ". $_SESSION["user"];
+        echo "Hallo ". $_SESSION["user"];
     }
      ?>
   </main>
