@@ -1,24 +1,21 @@
-Wichtig
-
+WICHTIG
 Daten bank
   mit 3 user
   db felder für eingabe
 Eingabe html von daten für datenbank
-Login index
 Css für index
-Idee für obe a de Navigation
 
 
-Nice to have
+LOGIK
+dringend / nicht dringen:
+Von allen Datensätzen wird due-date minus akt-date gerechnet. Von allen Datensätzen wird dann der Durchschnitt berechnet, wie lange man noch Zeit hat. (2 Tage, 9 Tage, 14 Tage = Durchschnitt 8.33 Tage)
+Ist ein einzelnes Projekt unter dem Durchschnitt ist es dringend (2 Tage).
+Ist ein einzelnes Projekt über  dem Durchschnitt ist es nicht drignend (9 Tage, 14 Tage).
+
+
+NICE TO HAVE
 Zeistrahl und aufgaben die zu erledigen sind
 
 
-Later
+LATER
 Games???
-
-
-$sel = "SELECT * FROM `eisenhower`";
-$erg = mysqli_query($conn, $sel);
-if (mysqli_num_rows($erg) > 0) {
-    echo '<table border="1"\n>';
-    while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
