@@ -32,8 +32,13 @@
         <input name="uname" type="text" id="uname" placeholder="&nbsp;" required autofocus>
         <label class="form--label" for="uname">Username</label><br>
 
-        <input name="passw" type="text" id="passw" placeholder="&nbsp;" required>
-        <label class="form--label" for="passw">Password</label><br>
+        <div onclick="showPW()" class="form--imgholder">
+          <span class="form--pw"></span>
+          <img src="img/password-icon.png" rel="Show Password" id="pwicon" class="form--pwicon">
+        </div>
+        <input name="passw" type="password" id="passw" placeholder="&nbsp;" required>
+        <label class="form--label" for="passw">Password</label>
+        <br>
 
         <input type="submit" style="position: absolute; left: -9999px;" tabindex="-1" />
       </fieldset>
