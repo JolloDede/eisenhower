@@ -52,19 +52,18 @@
   </main>
   <footer>
     <h2>Was wurde gebraucht</h2>
-    <div>
-      <img class="use-img1" src="" alt="HTML">
-      <img class="use-img2" src="" alt="CSS">
-      <img class="use-img3" src="" alt="JS">
-      <img class="use-img4" src="" alt="PHP">
-      <img class="use-img5" src="" alt="MySQL">
-
-      <div class="use-img1">.html</div>
-      <div class="use-img2">.css</div>
-      <div class="use-img3">.js</div>
-      <div class="use-img4">.php</div>
-      <div class="use-img5">.sql</div>
-
+    <div align="center" class="whatwasused">
+      <img class="use1-bild" src="img/HTML.svg">
+      <img class="use2-bild" src="img/CSS.svg">
+      <img class="use3-bild" src="img/JS.svg">
+      <img class="use4-bild" src="img/PHP.svg">
+      <img class="use5-bild" src="img/MySQL.svg">
+      <br>
+      <div class="use1-text">.html</div>
+      <div class="use2-text">.css</div>
+      <div class="use3-text">.js</div>
+      <div class="use4-text">.php</div>
+      <div class="use5-text">.sql</div>
     </div>
   </footer>
 </body>

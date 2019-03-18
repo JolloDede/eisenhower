@@ -164,6 +164,35 @@ input[name="passw"]:not(:placeholder-shown) ~ label[for="passw"] {
   transform: scale(0.9) translate(-20px, -28px);
 }
 
+.whatwasused img {
+  width: 9%;
+  cursor: help;
+}
+
+.use1-text, .use2-text,
+.use3-text, .use4-text,
+.use5-text {
+  position: relative;
+  top: -30px;
+  display: inline-block;
+  width: 9%;
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: -3;
+}
+
+.use1-bild:hover ~ .use1-text,
+.use2-bild:hover ~ .use2-text,
+.use3-bild:hover ~ .use3-text,
+.use4-bild:hover ~ .use4-text,
+.use5-bild:hover ~ .use5-text {
+  top: -10px;
+  opacity: 1;
+}
+
 /*
  *
  * eisenhower.html
