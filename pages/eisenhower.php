@@ -29,71 +29,85 @@
     $conn = mysqli_connect('localhost', $_SESSION["user"], $_SESSION["pw"], 'eh');
     mysqli_set_charset($conn, "utf8");
     if (!$conn) {
-      die("Connection failed");
-    }else {
-      $u = $_SESSION["user"];
-     ?>
+        die("Connection failed");
+    } else {
+        $u = $_SESSION["user"];
+        $sel = "SELECT * FROM eisenhower where user='$u'";
+        $erg = mysqli_query($conn, $sel);
+        if (mysqli_num_rows($erg) > 0) {
+            ?>
 
     <div class="eh--container">
       <div class="eh--element wnd">
         <h1>w / nd</h1>
 
         <div class="eh--content">
-          <p>1.content</p>
           <?php
-            $sel = "SELECT * FROM eisenhower where user='$u'";
-            $erg = mysqli_query($conn, $sel);
-            if (mysqli_num_rows($erg) > 0) {
-              while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
-                foreach ($line as $value) {
-                  echo "$value";
-                }
+          while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
+              if ($line["importance"] == 1) {
+                  echo "<p onclick=javascript:void(0)>";
+                  echo $line["link"];
+                  echo "</p>";
               }
-            }
-           ?>
+          } ?>
         </div>
       </div>
 
       <div class="eh--element wd">
         <h1>w / d</h1>
         <div class="eh--content">
-          <p>1.content</p>
-          <p>2.content</p>
+          <?php
+          $erg = mysqli_query($conn, $sel);
+          while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
+              if ($line["importance"] == 1) {
+                  echo "<p>";
+                  foreach ($line as $value) {
+                      echo "$value ";
+                  }
+                  echo "</p>";
+              }
+          } ?>
         </div>
       </div>
 
       <div class="eh--element nwnd">
         <h1>nw / nd</h1>
         <div class="eh--content">
-          <p>1.content</p>
-          <p>2.content</p>
-          <p>3.content</p>
-          <p>4.content</p>
-          <p>5.content</p>
-          <p>1.content</p>
-          <p>2.content</p>
-          <p>3.content</p>
-          <p>4.content</p>
-          <p>5.content</p>
-          <p>1.content</p>
-          <p>2.content</p>
-          <p>3.content</p>
-          <p>4.content</p>
-          <p>5.content</p>
+          <?php
+          $erg = mysqli_query($conn, $sel);
+          while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
+              if ($line["importance"] == 0) {
+                  echo "<p>";
+                  foreach ($line as $value) {
+                      echo "$value ";
+                  }
+                  echo "</p>";
+              }
+          } ?>
         </div>
       </div>
 
       <div class="eh--element nwd">
         <h1>nw / d</h1>
         <div class="eh--content">
-          <p></p>
+          <?php
+          $erg = mysqli_query($conn, $sel);
+          while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
+              if ($line["importance"] == 0) {
+                  echo "<p>";
+                  foreach ($line as $value) {
+                      echo "$value ";
+                  }
+                  echo "</p>";
+              }
+          } ?>
         </div>
       </div>
     </div>
     <?php
-    mysqli_close($conn);
+        }
+        mysqli_close($conn);
     }
-
      ?>
   </main>
   <footer></footer>
