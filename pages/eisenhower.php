@@ -117,6 +117,11 @@
         mysqli_close($conn);
       }
      ?>
+
+     <div class="">
+       <p onclick="newEtry()">Neuer Eintrag</p>
+     </div>
+
   </main>
   <footer>
     <div align="center" class="whatwasused">
