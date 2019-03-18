@@ -27,7 +27,7 @@
         <li><a href="..">Startseite</a></li>
         <?php
           if ($login) {
-            echo "<p class='nav--logout' href='javascript:void(0)'>logout</p>";
+            echo "<a class='nav--logout' href='../php/logout.php'>logout</a>";
           }
          ?>
       </ul>
