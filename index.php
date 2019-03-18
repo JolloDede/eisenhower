@@ -27,6 +27,7 @@
         <?php
           if ($login) {
             echo "<li><a href='pages/eisenhower.php'>Eisenhower</a></li>";
+            echo "<p class='nav--logout' href='javascript:void(0)'>logout</p>";
           }
          ?>
       </ul>

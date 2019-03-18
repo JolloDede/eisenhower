@@ -10,6 +10,14 @@
 *:focus {
   outline: none;
 }
+::selection {
+  background: #cc2020;
+  color: #ffffff;
+}
+::-moz-selection {
+  background: #cc2020;
+  color: #ffffff;
+}
 html, body {
   font-family: "Lato", sans-serif;
   width: 100%;
@@ -58,6 +66,20 @@ nav li a:before {
 }
 nav li a:hover:before {
   transform: scaleX(1);
+}
+
+.nav--logout {
+  display: inline;
+  position: absolute;
+  right: 50px;
+  height: 0px;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+.nav--logout:hover {
+  color: #cc2020;
 }
 
 /*
@@ -213,11 +235,11 @@ input[name="passw"]:not(:placeholder-shown) ~ label[for="passw"] {
   height: 200px;
 }
 .eh--element p {
-  display: inline;
-  margin: 2px 0 0 10px;
+  display: inline-block;
+  margin: 4px 0 0 10px;
   cursor: pointer;
   transition: 0.3s;
-  border-bottom: 2px solid #00000000;
+  border-bottom: 1px solid #00000000;
 }
 .eh--element p:hover {
   color: #cc2020;

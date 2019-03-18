@@ -1,6 +1,9 @@
 <?php session_start();
   if (!isset($_SESSION["user"])) {
     header("Location: ..");
+    $login = false;
+  } else {
+    $login = true;
   }
 ?>
 <!DOCTYPE html>
@@ -22,6 +25,11 @@
         <li><a href="https://github.com/jollodede" target="_blank">Dennis</a></li>
         <li><a href="https://github.com/thebauzz" target="_blank">Marcel</a></li>
         <li><a href="..">Startseite</a></li>
+        <?php
+          if ($login) {
+            echo "<p class='nav--logout' href='javascript:void(0)'>logout</p>";
+          }
+         ?>
       </ul>
     </nav>
   </header>
@@ -110,7 +118,21 @@
       }
      ?>
   </main>
-  <footer></footer>
+  <footer>
+    <div align="center" class="whatwasused">
+      <img class="use1-bild" src="../img/use/HTML.svg">
+      <img class="use2-bild" src="../img/use/CSS.svg">
+      <img class="use3-bild" src="../img/use/JS.svg">
+      <img class="use4-bild" src="../img/use/PHP.svg">
+      <img class="use5-bild" src="../img/use/MySQL.svg">
+      <br>
+      <div class="use1-text">.html</div>
+      <div class="use2-text">.css</div>
+      <div class="use3-text">.js</div>
+      <div class="use4-text">.php</div>
+      <div class="use5-text">.sql</div>
+    </div>
+  </footer>
 </body>
 
 </html>
