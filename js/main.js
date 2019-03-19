@@ -10,3 +10,20 @@ function showPW() {
     icon[0].classList.add("pwhidden")
   }
 }
+
+function newEntry() {
+  modal = document.getElementById("newentry--modal")
+  modal.classList.add("newentry--modal")
+
+  bg = document.getElementById("newentry--bg")
+  bg.classList.add("newentry--bg")
+  // Modales Fenster für das hinzufügen der neuen Elemente in die Datenbank.
+}
+
+function newEntryClose() {
+  modal = document.getElementById("newentry--modal")
+  modal.classList.remove("newentry--modal")
+
+  bg = document.getElementById("newentry--bg")
+  bg.classList.remove("newentry--bg")
+}

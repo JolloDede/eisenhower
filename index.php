@@ -38,7 +38,7 @@
     <?php
       if (!$login) {
         echo
-        '<form action="php/login.php" method="post">
+        '<form class="login" action="php/login.php" method="post">
           <fieldset>
             <legend>LOGIN</legend>
             <input name="uname" type="text" id="uname" placeholder="&nbsp;" required autofocus>

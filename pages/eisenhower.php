@@ -16,6 +16,7 @@
   <meta name="author" content="Dennis & Marcel" />
   <title>Dennis' & Marcel's Projekt</title>
   <link href="../css/main.css" rel="Stylesheet">
+  <script src="../js/main.js"></script>
 </head>
 
 <body>
@@ -118,9 +119,31 @@
       }
      ?>
 
-     <div class="">
-       <p onclick="newEtry()">Neuer Eintrag</p>
+     <p class="newentry--button" onclick="newEntry()">Neuer Eintrag</p>
+     <div id="newentry--modal" class="">
+       <form action="" method="post">
+         <fieldset>
+           <input style="font-size: inherit;" name="date" type="date" id="date" placeholder="&nbsp;" required>
+           <label class="form--label" for="date">Due Date</label><br>
+
+           <input name="link" type="text" id="link" placeholder="&nbsp;" required>
+           <label class="form--label" for="link">Link</label><br>
+
+           <textarea id="description" name="description" placeholder="&nbsp;"></textarea>
+           <label class="form--label" for="description">Beschreibung</label><br>
+
+           <label class="checkbox">
+             <input name="importance" class="cbox" id="importance" type="checkbox">
+             <span class="span"></span>
+           </label>
+           <label for="importance" class="checkbox--text">Wichtig</label>
+
+           <input type="submit" style="position: absolute; left: -9999px;" tabindex="-1" />
+         </fieldset>
+       </form>
+       <div class="newentry--exit" onclick="newEntryClose()"></div>
      </div>
+     <div id="newentry--bg" class="" onclick="newEntryClose()"></div>
 
   </main>
   <footer>
