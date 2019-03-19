@@ -121,7 +121,7 @@
 
      <p class="newentry--button" onclick="newEntry()">Neuer Eintrag</p>
      <div id="newentry--modal" class="">
-       <form action="" method="post">
+       <form action="../php/data.php" method="post">
          <fieldset>
            <input style="font-size: inherit;" name="date" type="date" id="date" placeholder="&nbsp;" required>
            <label class="form--label" for="date">Due Date</label><br>
