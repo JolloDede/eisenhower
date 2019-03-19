@@ -1,9 +1,6 @@
 WICHTIG
-Daten bank
-  mit 3 user
-  db felder für eingabe
-Eingabe html von daten für datenbank
-Css für index
+ - Datenbank mit 3 user
+ - Footer auf der Startseite
 
 
 LOGIK
@@ -14,8 +11,8 @@ Ist ein einzelnes Projekt über  dem Durchschnitt ist es nicht drignend (9 Tage,
 
 
 NICE TO HAVE
-Zeistrahl und aufgaben die zu erledigen sind
+ - Zeistrahl und aufgaben die zu erledigen sind
 
 
 LATER
-Games???
+ - Snake??????? plis
