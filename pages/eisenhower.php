@@ -147,6 +147,7 @@
          <div class="exit--2"></div>
        </div>
      </div>
+     <div id="queryvalue--bg" class="" onclick="queryvalueClose()"></div>
      <div id="newentry--bg" class="" onclick="newEntryClose()"></div>
 
   </main>

@@ -37,5 +37,6 @@
         <th>Wichtigkeit</td>
         <td>$importance</td>
       </tr>
-    </table>"
-; ?>
+    </table>";
+
+?>
