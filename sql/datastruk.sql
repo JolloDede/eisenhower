@@ -6,7 +6,7 @@ CREATE TABLE eisenhower(
   user varchar(20),
   etime datetime,
   link varchar(25),
-  discription varchar(200),
+  description varchar(200),
   importance boolean,
   PRIMARY key(id)
 );
