@@ -64,7 +64,7 @@
       }
       ?>
   </main>
-  <footer>
+  <!-- <footer>
     <div align="center" class="whatwasused">
       <img class="use1-bild" src="img/use/HTML.svg">
       <img class="use2-bild" src="img/use/CSS.svg">
@@ -78,7 +78,7 @@
       <div class="use4-text">.php</div>
       <div class="use5-text">.sql</div>
     </div>
-  </footer>
+  </footer> -->
 </body>
 
 </html>
