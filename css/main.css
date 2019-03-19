@@ -40,6 +40,9 @@ html, body {
   width: 100%;
   height: 100%;
 }
+
+
+
 /*
  *
  * Navigation
@@ -100,6 +103,8 @@ nav li a:hover:before {
 .nav--logout:hover {
   color: #cc2020;
 }
+
+
 
 /*
  *
@@ -243,7 +248,7 @@ input[type="checkbox"] {
 .checkbox--text {
   display: inline;
   position: relative;
-  top: -20px;
+  top: -22px;
   left: 25px;
   user-select: none;
   -moz-user-select: none;
@@ -353,6 +358,7 @@ input[type="checkbox"] {
 
 
 .newentry--button {
+  display: block;
   margin: 0 auto;
   width: 150px;
   padding: 3px 3px;
@@ -383,10 +389,10 @@ input[type="checkbox"] {
   filter: blur(0px);
 }
 
-#newentry--modal {
+#newentry--form {
   display: none
 }
-#newentry--modal.newentry--modal {
+#newentry--form.newentry--form {
   display: block;
   position: fixed;
   top: 40%;
@@ -397,6 +403,38 @@ input[type="checkbox"] {
   border-radius: 5px;
   z-index: 9999;
 }
+
+#queryvalue--display {
+  display: none
+}
+#queryvalue--display.queryvalue--display {
+  display: block;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  padding: 40px;
+  background: #d3d3d3;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  z-index: 9999;
+}
+.queryvalue--table {
+  border-collapse: collapse;
+}
+.queryvalue--table tr {
+  border: 1px solid #000000;
+  line-height: 25px;
+  vertical-align: top;
+}
+.queryvalue--table th {
+  text-align: left;
+  padding: 5px;
+}
+.queryvalue--table td {
+  padding: 5px 5px 5px 10px;
+}
+
 
 .newentry--exit {
   position: absolute;
@@ -409,7 +447,6 @@ input[type="checkbox"] {
   border-radius: 50%;
   cursor: pointer;
 }
-
 .exit--1 {
   position: absolute;
   right: 3px;
@@ -434,43 +471,3 @@ input[type="checkbox"] {
  *
  * footer
 */
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 105px;
-  padding-top: 30px;
-  background: #e3e3e3;
-  border-top: 2px solid #000000;
-  box-shadow: 0px -1px 20px rgba(0, 0, 0, 0.2);
-}
-.whatwasused img {
-  position: relative;
-  width: 80px;
-  cursor: help;
-  z-index: 2;
-}
-
-.use1-text, .use2-text,
-.use3-text, .use4-text,
-.use5-text {
-  position: relative;
-  top: -90px;
-  display: inline-block;
-  width: 80px;
-  height: 0px;
-  font-weight: bold;
-  opacity: 0;
-  transition: 0.3s;
-  z-index: 1;
-}
-
-.use1-bild:hover ~ .use1-text,
-.use2-bild:hover ~ .use2-text,
-.use3-bild:hover ~ .use3-text,
-.use4-bild:hover ~ .use4-text,
-.use5-bild:hover ~ .use5-text {
-  top: -110px;
-  opacity: 1;
-}

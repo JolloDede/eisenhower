@@ -45,7 +45,7 @@
         $u = $_SESSION["user"];
         $sel = "SELECT * FROM eisenhower where user='$u'";
         $erg = mysqli_query($conn, $sel);
-        if (mysqli_num_rows($erg) > 0) {
+        if (mysqli_num_rows($erg) >= 0) {
             ?>
 
     <div class="eh--container">
@@ -56,9 +56,7 @@
           <?php
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
               if ($line["importance"] == 1) {
-                echo "<p onclick=javascript:void(0)>";
-                echo $line["link"];
-                echo "</p><br>";
+                echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
               }
           }
           ?>
@@ -72,9 +70,7 @@
           $erg = mysqli_query($conn, $sel);
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
               if ($line["importance"] == 1) {
-                echo "<p onclick=javascript:void(0)>";
-                echo $line["link"];
-                echo "</p><br>";
+                echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
               }
           }
           ?>
@@ -88,9 +84,7 @@
           $erg = mysqli_query($conn, $sel);
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
               if ($line["importance"] == 0) {
-                echo "<p onclick=javascript:void(0)>";
-                echo $line["link"];
-                echo "</p><br>";
+                echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
               }
           }
           ?>
@@ -104,9 +98,7 @@
           $erg = mysqli_query($conn, $sel);
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
               if ($line["importance"] == 0) {
-                echo "<p onclick=javascript:void(0)>";
-                echo $line["link"];
-                echo "</p><br>";
+                echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
               }
           }
           ?>
@@ -119,8 +111,10 @@
       }
      ?>
 
+     <p id="test"></p>
+
      <p class="newentry--button" onclick="newEntry()">Neuer Eintrag</p>
-     <div id="newentry--modal" class="">
+     <div id="newentry--form" class="">
        <form action="../php/data.php" method="post">
          <fieldset>
            <input style="font-size: inherit;" name="date" type="date" id="date" placeholder="&nbsp;" required>
@@ -138,7 +132,7 @@
            </label>
            <label for="importance" class="checkbox--text">Wichtig</label>
 
-           <input type="submit">
+           <input type="submit" class="newentry--button">
          </fieldset>
        </form>
        <div class="newentry--exit" onclick="newEntryClose()">
@@ -146,24 +140,16 @@
          <div class="exit--2"></div>
        </div>
      </div>
+
+     <div id="queryvalue--display">
+       <div class="newentry--exit" onclick="queryvalueClose()">
+         <div class="exit--1"></div>
+         <div class="exit--2"></div>
+       </div>
+     </div>
      <div id="newentry--bg" class="" onclick="newEntryClose()"></div>
 
   </main>
-  <!-- <footer>
-    <div align="center" class="whatwasused">
-      <img class="use1-bild" src="../img/use/HTML.svg">
-      <img class="use2-bild" src="../img/use/CSS.svg">
-      <img class="use3-bild" src="../img/use/JS.svg">
-      <img class="use4-bild" src="../img/use/PHP.svg">
-      <img class="use5-bild" src="../img/use/MySQL.svg">
-      <br>
-      <div class="use1-text">.html</div>
-      <div class="use2-text">.css</div>
-      <div class="use3-text">.js</div>
-      <div class="use4-text">.php</div>
-      <div class="use5-text">.sql</div>
-    </div>
-  </footer> -->
 </body>
 
 </html>

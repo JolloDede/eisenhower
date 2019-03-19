@@ -16,13 +16,13 @@
     mysqli_set_charset($conn, "utf8");
     if (!$conn) {
       die("Connection failed");
-    } else{
+    } else {
       $sql = "INSERT INTO eisenhower(id, user, etime, link, description, importance)
       VALUES ('', '$user', '$date', '$link', '$desc', '$imp')";
       if (mysqli_query($conn, $sql)){
         header("Location: ../pages/eisenhower.php");
       } else {
-        echo "fail";
+        echo "fail<br>";
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
       }
     }
