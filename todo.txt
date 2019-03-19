@@ -1,6 +1,7 @@
 WICHTIG
  - Datenbank mit 3 user
  - Footer auf der Startseite
+ - Favicon für die Seite
 
 
 LOGIK
