@@ -58,7 +58,9 @@
         echo "<p class='main--welcomeUser'>Willkommen, ".$_SESSION["user"]."</p>";
       }
       if (isset($_SESSION['fail'])) {
-        echo "<p class='login--failed'>Login failed !</p>";
+        if ($_SESSION['fail'] == "Fail") {
+          echo "<p class='login--failed'>Login failed !</p>";
+        }
       }
       ?>
   </main>

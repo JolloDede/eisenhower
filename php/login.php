@@ -11,6 +11,7 @@
     } else {
       $_SESSION["user"] = $uname;
       $_SESSION["pw"] = $pw;
+      $_SESSION["fail"] = "Success";
       header("location:../index.php");
     }
   }else{

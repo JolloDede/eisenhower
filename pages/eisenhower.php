@@ -138,10 +138,13 @@
            </label>
            <label for="importance" class="checkbox--text">Wichtig</label>
 
-           <input type="submit" style="position: absolute; left: -9999px;" tabindex="-1" />
+           <input type="submit">
          </fieldset>
        </form>
-       <div class="newentry--exit" onclick="newEntryClose()">X</div>
+       <div class="newentry--exit" onclick="newEntryClose()">
+         <div class="exit--1"></div>
+         <div class="exit--2"></div>
+       </div>
      </div>
      <div id="newentry--bg" class="" onclick="newEntryClose()"></div>
 
