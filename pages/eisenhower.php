@@ -121,10 +121,10 @@
 
      <p class="newentry--button" onclick="newEntry()">Neuer Eintrag</p>
      <div id="newentry--modal" class="">
-       <form action="" method="post">
+       <form action="../php/data.php" method="post">
          <fieldset>
-           <input style="font-size: inherit;" name="date" type="date" id="date" placeholder="&nbsp;" required>
-           <label class="form--label" for="date">Due Date</label><br>
+           <input style="font-size: inherit;" name="datetime-local" type="datetime-local" id="datetime-local" placeholder="&nbsp;" required>
+           <label class="form--label" for="datetime-local">Due Date</label><br>
 
            <input name="link" type="text" id="link" placeholder="&nbsp;" required>
            <label class="form--label" for="link">Link</label><br>
@@ -141,7 +141,7 @@
            <input type="submit" style="position: absolute; left: -9999px;" tabindex="-1" />
          </fieldset>
        </form>
-       <div class="newentry--exit" onclick="newEntryClose()"></div>
+       <div class="newentry--exit" onclick="newEntryClose()">X</div>
      </div>
      <div id="newentry--bg" class="" onclick="newEntryClose()"></div>
 
