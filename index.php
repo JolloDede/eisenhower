@@ -34,7 +34,6 @@
     </nav>
   </header>
   <main>
-    <p><?php echo $_SESSION['fail']; ?></p> <?php //TODO: mach das?>
     <?php
       if (!$login) {
         echo
@@ -58,7 +57,12 @@
       } else {
         echo "<p class='main--welcomeUser'>Willkommen, ".$_SESSION["user"]."</p>";
       }
-    ?>
+      if (isset($_SESSION['fail'])) {
+        if ($_SESSION['fail'] == "Fail") {
+          echo "<p class='login--failed'>Login failed !</p>";
+        }
+      }
+      ?>
   </main>
   <footer>
     <div align="center" class="whatwasused">

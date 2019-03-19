@@ -166,7 +166,7 @@ input:first-child {
 
 input[type="text"],
 input[type="password"],
-input[type="date"] {
+input[type="datetime-local"] {
   width: 250px;
   padding: 3px 3px;
   font-size: 17px;
@@ -195,7 +195,7 @@ textarea {
 
 input[type="text"]:focus,
 input[type="password"]:focus,
-input[type="date"]:focus,
+input[type="datetime-local"]:focus,
 textarea:focus {
   border: 2px solid #cc2020;
   outline: none;
@@ -203,11 +203,11 @@ textarea:focus {
 
 input[name="uname"]:focus ~ label[for="uname"],
 input[name="passw"]:focus ~ label[for="passw"],
-input[name="date"]:focus ~ label[for="date"],
+input[name="datetime-local"]:focus ~ label[for="datetime-local"],
 input[name="link"]:focus ~ label[for="link"],
 input[name="uname"]:not(:placeholder-shown) ~ label[for="uname"],
 input[name="passw"]:not(:placeholder-shown) ~ label[for="passw"],
-input[name="date"]:not(:placeholder-shown) ~ label[for="date"],
+input[name="datetime-local"]:not(:placeholder-shown) ~ label[for="datetime-local"],
 input[name="link"]:not(:placeholder-shown) ~ label[for="link"] {
   color: #000000;
   transform: scale(0.9) translate(-20px, -28px);
@@ -263,6 +263,13 @@ input[type="checkbox"] {
 }
 .cbox:checked + .span::after {
   height: 100%;
+}
+
+.login--failed {
+  margin-top: 10px;
+  text-align: center;
+  color: #cc2020;
+  font-weight: bold;
 }
 
 /*
@@ -352,7 +359,7 @@ input[type="checkbox"] {
   position: fixed;
   top:0; bottom:0;
   left:0; right:0;
-  background: #00000020;
+  background: #00000070;
   z-index: 9998;
   filter: blur(0px);
 }
@@ -378,12 +385,32 @@ input[type="checkbox"] {
   right: -13px;
   width: 26px;
   height: 26px;
-  background: red;
+  background: #ef3e3e;
   border: 2px solid #000000;
   border-radius: 50%;
   cursor: pointer;
 }
 
+.exit--1 {
+  position: absolute;
+  right: 3px;
+  top: 11px;
+  height: 4px;
+  width: 20px;
+  border-radius: 10px;
+  background: black;
+  transform: rotate(45deg);
+}
+.exit--2 {
+  position: absolute;
+  right: 3px;
+  top: 11px;
+  height: 4px;
+  width: 20px;
+  border-radius: 10px;
+  background: black;
+  transform: rotate(-45deg);
+}
 /*
  *
  * footer

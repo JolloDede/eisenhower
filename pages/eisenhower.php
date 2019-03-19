@@ -123,8 +123,8 @@
      <div id="newentry--modal" class="">
        <form action="../php/data.php" method="post">
          <fieldset>
-           <input style="font-size: inherit;" name="date" type="date" id="date" placeholder="&nbsp;" required>
-           <label class="form--label" for="date">Due Date</label><br>
+           <input style="font-size: inherit;" name="datetime-local" type="datetime-local" id="datetime-local" placeholder="&nbsp;" required>
+           <label class="form--label" for="datetime-local">Due Date</label><br>
 
            <input name="link" type="text" id="link" placeholder="&nbsp;" required>
            <label class="form--label" for="link">Link</label><br>
@@ -138,10 +138,13 @@
            </label>
            <label for="importance" class="checkbox--text">Wichtig</label>
 
-           <input type="submit" style="position: absolute; left: -9999px;" tabindex="-1" />
+           <input type="submit">
          </fieldset>
        </form>
-       <div class="newentry--exit" onclick="newEntryClose()"></div>
+       <div class="newentry--exit" onclick="newEntryClose()">
+         <div class="exit--1"></div>
+         <div class="exit--2"></div>
+       </div>
      </div>
      <div id="newentry--bg" class="" onclick="newEntryClose()"></div>
 
