@@ -359,7 +359,7 @@ input[type="checkbox"] {
   position: fixed;
   top:0; bottom:0;
   left:0; right:0;
-  background: #00000020;
+  background: #00000070;
   z-index: 9998;
   filter: blur(0px);
 }
@@ -385,7 +385,7 @@ input[type="checkbox"] {
   right: -13px;
   width: 26px;
   height: 26px;
-  background: #cc2020;
+  background: #ef3e3e;
   border: 2px solid #000000;
   border-radius: 50%;
   cursor: pointer;
