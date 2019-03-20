@@ -5,8 +5,8 @@ CREATE TABLE eisenhower(
   id int AUTO_INCREMENT not null,
   user varchar(20),
   etime date,
-  link varchar(25),
-  description varchar(200),
+  link varchar(50),
+  description varchar(2000),
   importance boolean,
   PRIMARY key(id)
 );
