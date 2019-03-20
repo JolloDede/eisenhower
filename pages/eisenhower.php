@@ -69,8 +69,12 @@
           <?php
           $erg = mysqli_query($conn, $sel);
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
-              if ($line["importance"] == 1) {
-                echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
+              if ($line["importance"] == 1 && $line["etime"] <= date("Y-m-d")) {
+                $d1=strtotime("July 04");
+                $d2=ceil(($d1-time())/60/60/24);
+                if ($d2 <= 2) {
+                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
+                }
               }
           }
           ?>
