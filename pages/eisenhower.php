@@ -31,7 +31,7 @@
             echo "<a class='nav--logout' href='../php/logout.php'>logout</a>";
           }
          ?>
-         <li><a href="pages/snake.html">Snake</a></li>
+         <li><a href="snake.html">Snake</a></li>
       </ul>
     </nav>
   </header>
@@ -160,7 +160,7 @@
            </label>
            <label for="importance" class="checkbox--text">Wichtig</label>
 
-           <input type="submit" class="newentry--button">
+           <input type="submit" class="newentry--button" value="Hinzufügen">
          </fieldset>
        </form>
        <div class="newentry--exit" onclick="newEntryClose()">
