@@ -31,7 +31,7 @@
             echo "<a class='nav--logout' href='../php/logout.php'>logout</a>";
           }
          ?>
-         <li><a href="pages/snake.html">Snake</a></li> 
+         <li><a href="pages/snake.html">Snake</a></li>
       </ul>
     </nav>
   </header>
@@ -47,7 +47,7 @@
         $sel = "SELECT * FROM eisenhower where user='$u'";
         $erg = mysqli_query($conn, $sel);
         if (mysqli_num_rows($erg) >= 0) {
-            ?>
+    ?>
 
     <div class="eh--container">
       <div class="eh--element wnd">
