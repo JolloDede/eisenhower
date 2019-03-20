@@ -56,7 +56,11 @@
           <?php
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
               if ($line["importance"] == 1) {
-                echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
+                $d1=strtotime("July 04");
+                $d2=ceil(($d1-time())/60/60/24);
+                if ($d2 > 2) {
+                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
+                }
               }
           }
           ?>
@@ -69,9 +73,9 @@
           <?php
           $erg = mysqli_query($conn, $sel);
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
-              if ($line["importance"] == 1 && $line["etime"] <= date("Y-m-d")) {
-                $d1=strtotime("July 04");
-                $d2=ceil(($d1-time())/60/60/24);
+              if ($line["importance"] == 1) {
+                $d1 = strtotime($line["etime"]);
+                $d2 = ceil(($d1-time())/60/60/24);
                 if ($d2 <= 2) {
                   echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
                 }
@@ -88,7 +92,11 @@
           $erg = mysqli_query($conn, $sel);
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
               if ($line["importance"] == 0) {
-                echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
+                $d1 = strtotime($line["etime"]);
+                $d2 = ceil(($d1-time())/60/60/24);
+                if ($d2 > 2) {
+                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
+                }
               }
           }
           ?>
@@ -102,7 +110,11 @@
           $erg = mysqli_query($conn, $sel);
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
               if ($line["importance"] == 0) {
-                echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
+                $d1 = strtotime($line["etime"]);
+                $d2 = ceil(($d1-time())/60/60/24);
+                if ($d2 <= 2) {
+                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
+                }
               }
           }
           ?>
