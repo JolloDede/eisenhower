@@ -59,7 +59,7 @@
                 $d1 = strtotime($line["etime"]);
                 $d2 = ceil(($d1-time())/60/60/24);
                 if ($d2 > 2) {
-                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]." - ".$d2." Tage</p><br>";
+                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - ".$d2." Tage</strong></p><br>";
                 }
               }
           }
@@ -77,7 +77,9 @@
                 $d1 = strtotime($line["etime"]);
                 $d2 = ceil(($d1-time())/60/60/24);
                 if ($d2 <= 2) {
-                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]." - ".$d2." Tage</p><br>";
+                  if ($d2 < 2) { $days = "Tag"; }
+                  else { $days = "Tage"; }
+                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - $d2 $days</strong></p><br>";
                 }
               }
           }
@@ -95,7 +97,7 @@
                 $d1 = strtotime($line["etime"]);
                 $d2 = ceil(($d1-time())/60/60/24);
                 if ($d2 > 2) {
-                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]." - ".$d2." Tage</p><br>";
+                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - ".$d2." Tage</strong></p><br>";
                 }
               }
           }
@@ -113,7 +115,9 @@
                 $d1 = strtotime($line["etime"]);
                 $d2 = ceil(($d1-time())/60/60/24);
                 if ($d2 <= 2) {
-                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]." - ".$d2." Tage</p><br>";
+                  if ($d2 < 2) { $days = "Tag"; }
+                  else { $days = "Tage"; }
+                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - $d2 $days</strong></p><br>";
                 }
               }
           }
