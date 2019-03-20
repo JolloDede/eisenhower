@@ -1,4 +1,5 @@
 WICHTIG
+ - Button für das löschen des Projekts
  - Datenbank mit 3 user
  - Footer auf der Startseite
  - Favicon für die Seite
