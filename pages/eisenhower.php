@@ -46,7 +46,13 @@
         $u = $_SESSION["user"];
         $sel = "SELECT * FROM eisenhower where user='$u'";
         $erg = mysqli_query($conn, $sel);
+        $temp = 0; $counter = 0;
         if (mysqli_num_rows($erg) >= 0) {
+          while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
+            $temp += strtotime($line["etime"]);
+            $counter++;
+          }
+          $average = $temp / $counter;
     ?>
 
     <div class="eh--container">
@@ -55,11 +61,12 @@
 
         <div class="eh--content">
           <?php
+          $erg = mysqli_query($conn, $sel);
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
               if ($line["importance"] == 1) {
                 $d1 = strtotime($line["etime"]);
                 $d2 = ceil(($d1-time())/60/60/24);
-                if ($d2 > 2) {
+                if ($d1 > $average) {
                   echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - ".$d2." Tage</strong></p><br>";
                 }
               }
@@ -77,7 +84,7 @@
               if ($line["importance"] == 1) {
                 $d1 = strtotime($line["etime"]);
                 $d2 = ceil(($d1-time())/60/60/24);
-                if ($d2 <= 2) {
+                if ($d1 <= $average) {
                   if ($d2 < 2) { $days = "Tag"; }
                   else { $days = "Tage"; }
                   echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - $d2 $days</strong></p><br>";
@@ -97,7 +104,7 @@
               if ($line["importance"] == 0) {
                 $d1 = strtotime($line["etime"]);
                 $d2 = ceil(($d1-time())/60/60/24);
-                if ($d2 > 2) {
+                if ($d1 > $average) {
                   echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - ".$d2." Tage</strong></p><br>";
                 }
               }
@@ -115,7 +122,7 @@
               if ($line["importance"] == 0) {
                 $d1 = strtotime($line["etime"]);
                 $d2 = ceil(($d1-time())/60/60/24);
-                if ($d2 <= 2) {
+                if ($d1 <= $average) {
                   if ($d2 < 2) { $days = "Tag"; }
                   else { $days = "Tage"; }
                   echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - $d2 $days</strong></p><br>";
