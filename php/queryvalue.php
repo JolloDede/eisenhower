@@ -3,6 +3,8 @@
   $user = $_SESSION["user"];
   $pw = $_SESSION["pw"];
 
+  $id = $_GET['q'];
+
   $mysqli = new mysqli('localhost', $user, $pw, 'eh');
   if ($mysqli -> connect_error) {
     exit('Could not connect');
@@ -37,6 +39,7 @@
         <th>Wichtigkeit</td>
         <td>$importance</td>
       </tr>
-    </table>";
+    </table>
+    <p id='query--delete' class='query--delete' onclick='queryDelete($id)'>Eintrag löschen</p>";
 
 ?>

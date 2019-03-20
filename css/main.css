@@ -358,7 +358,8 @@ input[type="checkbox"] {
 .wd   h1 { background: #f79b9b; }
 
 
-.newentry--button {
+.newentry--button,
+.query--delete {
   display: block;
   margin: 0 auto;
   width: 150px;
@@ -375,7 +376,11 @@ input[type="checkbox"] {
   -moz-user-select: none;
   -webkit-user-select: none;
 }
-.newentry--button:hover {
+.query--delete {
+  margin-top: 20px;
+}
+.newentry--button:hover,
+.query--delete:hover {
   background: #e3e3e3;
   border: 2px solid #cc2020;
   color: #222222;

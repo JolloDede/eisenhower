@@ -65,4 +65,14 @@ function queryvalueClose() {
 
   table = document.getElementById("queryvalue--table")
   table.parentNode.removeChild(table)
+
+  button = document.getElementById("query--delete")
+  button.parentNode.removeChild(button)
+}
+
+function queryDelete(id) {
+  var xhttp = new XMLHttpRequest()
+  xhttp.open("GET", "../php/querydelete.php?q=" + id, true)
+  xhttp.send()
+  location.reload()
 }
