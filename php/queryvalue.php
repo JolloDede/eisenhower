@@ -35,10 +35,6 @@
         <th>Beschreibung</th>
         <td>$description</td>
       </tr>
-      <tr>
-        <th>Wichtigkeit</td>
-        <td>$importance</td>
-      </tr>
     </table>
     <p id='query--delete' class='query--delete' onclick='queryDelete($id)'>Eintrag löschen</p>";
 
