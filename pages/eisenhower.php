@@ -56,10 +56,10 @@
           <?php
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
               if ($line["importance"] == 1) {
-                $d1=strtotime("July 04");
-                $d2=ceil(($d1-time())/60/60/24);
+                $d1 = strtotime($line["etime"]);
+                $d2 = ceil(($d1-time())/60/60/24);
                 if ($d2 > 2) {
-                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
+                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]." - ".$d2." Tage</p><br>";
                 }
               }
           }
@@ -77,7 +77,7 @@
                 $d1 = strtotime($line["etime"]);
                 $d2 = ceil(($d1-time())/60/60/24);
                 if ($d2 <= 2) {
-                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
+                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]." - ".$d2." Tage</p><br>";
                 }
               }
           }
@@ -95,7 +95,7 @@
                 $d1 = strtotime($line["etime"]);
                 $d2 = ceil(($d1-time())/60/60/24);
                 if ($d2 > 2) {
-                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
+                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]." - ".$d2." Tage</p><br>";
                 }
               }
           }
@@ -113,7 +113,7 @@
                 $d1 = strtotime($line["etime"]);
                 $d2 = ceil(($d1-time())/60/60/24);
                 if ($d2 <= 2) {
-                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."</p><br>";
+                  echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]." - ".$d2." Tage</p><br>";
                 }
               }
           }
