@@ -1,7 +1,13 @@
 <?php
   session_start();
-  $uname = htmlentities($_POST["uname"]);
-  $pw = htmlentities($_POST["passw"]);
+  $uname = trim($_POST["uname"]);
+  $uname = htmlentities($uname);
+  $uname = stripslashes($uname);
+
+  $pw = trim($_POST["passw"]);
+  $pw = htmlentities($pw);
+  $pw = stripslashes($pw);
+
   if (isset($_POST["uname"]) && isset($_POST["passw"])) {
     $conn = mysqli_connect('localhost', $uname, $pw, 'eh');
     mysqli_set_charset($conn, "utf8");
