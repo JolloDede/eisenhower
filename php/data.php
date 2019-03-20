@@ -3,9 +3,9 @@
   $user = $_SESSION["user"];
   $pw = $_SESSION["pw"];
   if (isset($_POST["date"]) && isset($_POST["link"]) && isset($_POST["description"])) {
-    $date = $_POST["date"];
-    $link = $_POST["link"];
-    $desc = $_POST["description"];
+    $date = htmlentities($_POST["date"]);
+    $link = htmlentities($_POST["link"]);
+    $desc = htmlentities($_POST["description"]);
     if (isset($_POST["importance"])) {
       $imp = true;
     } else {
