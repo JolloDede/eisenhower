@@ -8,40 +8,45 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Lato";
   src: url("../font/Lato-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
+
 @font-face {
   font-family: "Lato";
   src: url("../font/Lato-Italic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
+
 * {
   margin: 0;
   padding: 0;
 }
+
 *:focus {
   outline: none;
 }
+
 ::selection {
   background: #cc2020;
   color: #ffffff;
 }
+
 ::-moz-selection {
   background: #cc2020;
   color: #ffffff;
 }
+
 html, body {
   font-family: "Lato", sans-serif;
   width: 100%;
   height: 100vh;
 }
-
-
 
 /*
  *
@@ -63,16 +68,19 @@ nav {
   -webkit-user-select: none;
   z-index: 9997;
 }
+
 nav li {
   display: inline-block;
   padding: 0 20px;
 }
+
 nav li a {
   position: relative;
   font-size: 19px;
   text-decoration: none;
   color: #000000;
 }
+
 nav li a:before {
   content: "";
   position: absolute;
@@ -85,6 +93,7 @@ nav li a:before {
   transform-origin: left;
   transition: transform 0.3s;
 }
+
 nav li a:hover:before {
   transform: scaleX(1);
 }
@@ -100,11 +109,10 @@ nav li a:hover:before {
   cursor: pointer;
   transition-duration: 0.3s;
 }
+
 .nav--logout:hover {
   color: #cc2020;
 }
-
-
 
 /*
  *
@@ -202,6 +210,7 @@ input[type="date"] {
   -moz-caret-color: #cc2020;
   -webkit-caret-color: #cc2020;
 }
+
 textarea {
   min-width: 250px;
   max-width: 250px;
@@ -225,19 +234,20 @@ textarea:focus {
   outline: none;
 }
 
-input[name="uname"]:focus ~ label[for="uname"],
-input[name="passw"]:focus ~ label[for="passw"],
-input[name="date"]:focus ~ label[for="date"],
-input[name="link"]:focus ~ label[for="link"],
-input[name="uname"]:not(:placeholder-shown) ~ label[for="uname"],
-input[name="passw"]:not(:placeholder-shown) ~ label[for="passw"],
-input[name="date"]:not(:placeholder-shown) ~ label[for="date"],
-input[name="link"]:not(:placeholder-shown) ~ label[for="link"] {
+input[name="uname"]:focus~label[for="uname"],
+input[name="passw"]:focus~label[for="passw"],
+input[name="date"]:focus~label[for="date"],
+input[name="link"]:focus~label[for="link"],
+input[name="uname"]:not(:placeholder-shown)~label[for="uname"],
+input[name="passw"]:not(:placeholder-shown)~label[for="passw"],
+input[name="date"]:not(:placeholder-shown)~label[for="date"],
+input[name="link"]:not(:placeholder-shown)~label[for="link"] {
   color: #000000;
   transform: scale(0.9) translate(-20px, -28px);
 }
-textarea:focus ~ label[for="description"],
-textarea:not(:placeholder-shown) ~ label[for="description"] {
+
+textarea:focus~label[for="description"],
+textarea:not(:placeholder-shown)~label[for="description"] {
   color: #000000;
   transform: scale(0.9) translate(-20px, -55px);
 }
@@ -271,21 +281,23 @@ input[type="checkbox"] {
   width: 100%;
   height: 100%;
   cursor: pointer;
-  border-radius: 0 0 5px 5px!important;
+  border-radius: 0 0 5px 5px !important;
   background: #00000020;
 }
+
 .span::after {
-	content: "";
-	position: absolute;
+  content: "";
+  position: absolute;
   width: 100%;
-	height: 0;
-	top: 0;
-	left: 0;
+  height: 0;
+  top: 0;
+  left: 0;
   transition: 0.2s;
   border-radius: 0 0 5px 5px;
-	background: #cc2020;
+  background: #cc2020;
 }
-.cbox:checked + .span::after {
+
+.cbox:checked+.span::after {
   height: 100%;
 }
 
@@ -313,10 +325,12 @@ input[type="checkbox"] {
   width: 50%;
   border-bottom: 2px solid #000000;
 }
+
 .eh--element:nth-child(1),
 .eh--element:nth-child(2) {
   border-top: 2px solid #000000;
 }
+
 .eh--element:nth-child(odd)::after {
   content: "";
   position: absolute;
@@ -336,10 +350,12 @@ input[type="checkbox"] {
   -moz-user-select: none;
   -webkit-user-select: none;
 }
+
 .eh--element .eh--content {
   overflow-y: scroll;
   height: 200px;
 }
+
 .eh--element p {
   display: inline-block;
   margin: 4px 0 0 10px;
@@ -347,16 +363,27 @@ input[type="checkbox"] {
   transition: 0.3s;
   border-bottom: 1px solid #00000000;
 }
+
 .eh--element p:hover {
   color: #cc2020;
   border-bottom: 1px solid black;
 }
 
-.nwnd h1 { background: #c0e8a0; }
-.wnd  h1 { background: #f5f78f; }
-.nwd  h1 { background: #f4d577; }
-.wd   h1 { background: #f79b9b; }
+.nwnd h1 {
+  background: #c0e8a0;
+}
 
+.wnd h1 {
+  background: #f5f78f;
+}
+
+.nwd h1 {
+  background: #f4d577;
+}
+
+.wd h1 {
+  background: #f79b9b;
+}
 
 .newentry--button,
 .query--delete {
@@ -376,9 +403,11 @@ input[type="checkbox"] {
   -moz-user-select: none;
   -webkit-user-select: none;
 }
+
 .query--delete {
   margin-top: 20px;
 }
+
 .newentry--button:hover,
 .query--delete:hover {
   background: #e3e3e3;
@@ -389,8 +418,10 @@ input[type="checkbox"] {
 .newentry--bg,
 .queryvalue--bg {
   position: fixed;
-  top:0; bottom:0;
-  left:0; right:0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background: #00000070;
   z-index: 9998;
   filter: blur(0px);
@@ -399,6 +430,7 @@ input[type="checkbox"] {
 #newentry--form {
   display: none
 }
+
 #newentry--form.newentry--form {
   display: block;
   position: fixed;
@@ -414,6 +446,7 @@ input[type="checkbox"] {
 #queryvalue--display {
   display: none
 }
+
 #queryvalue--display.queryvalue--display {
   display: block;
   position: fixed;
@@ -426,22 +459,25 @@ input[type="checkbox"] {
   border-radius: 5px;
   z-index: 9999;
 }
+
 .queryvalue--table {
   border-collapse: collapse;
 }
+
 .queryvalue--table tr {
   border: 1px solid #000000;
   line-height: 25px;
   vertical-align: top;
 }
+
 .queryvalue--table th {
   text-align: left;
   padding: 5px;
 }
+
 .queryvalue--table td {
   padding: 5px 5px 5px 10px;
 }
-
 
 .newentry--exit {
   position: absolute;
@@ -454,6 +490,7 @@ input[type="checkbox"] {
   border-radius: 50%;
   cursor: pointer;
 }
+
 .exit--1 {
   position: absolute;
   right: 3px;
@@ -464,6 +501,7 @@ input[type="checkbox"] {
   background: black;
   transform: rotate(45deg);
 }
+
 .exit--2 {
   position: absolute;
   right: 3px;
@@ -474,7 +512,22 @@ input[type="checkbox"] {
   background: black;
   transform: rotate(-45deg);
 }
+
 /*
  *
  * footer
 */
+
+.wholeboard {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  display: block;
+  padding-top: 90px;
+}
+
+.board-head {
+  width: 100%;
+  height: 70px;
+  background-color: #4a752c;
+}
