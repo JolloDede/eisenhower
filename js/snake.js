@@ -1,3 +1,4 @@
+var x = 200;
 const cvs = document.getElementById('snake');
 const ctx = cvs.getContext('2d');
 
@@ -90,6 +91,7 @@ function draw() {
   //if the snake eats the food
   if (snakex == food.x && snakey == food.y) {
     score++;
+    x -= 10
     food = {
       x: Math.floor(Math.random() * 17 + 1) * box,
       y: Math.floor(Math.random() * 15 + 3) * box
@@ -117,6 +119,10 @@ function draw() {
   ctx.fillText(score, box * 2, box * 1.6);
 }
 
-//call draw function every 100 ms
+//call draw function every ms
 
+<<<<<<< HEAD
 let game = setInterval(draw, 200);
+=======
+let game = setInterval(draw, x);
+>>>>>>> adcaa1c54da14a91dcb4d788878609e2a83db3a8
