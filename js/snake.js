@@ -51,7 +51,6 @@ function direction(event) {
 }
 // check collision function
 function collision(head, array) {
-  console.log(array.length);
   for (let i = 0; i < array.length; i++) {
     if (head.x == array[i].x && head.y == array[i].y) {
       return true;
@@ -120,4 +119,4 @@ function draw() {
 
 //call draw function every 100 ms
 
-let game = setInterval(draw, 100);
+let game = setInterval(draw, 200);
