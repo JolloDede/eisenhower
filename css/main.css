@@ -518,16 +518,9 @@ input[type="checkbox"] {
  * footer
 */
 
-.wholeboard {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  display: block;
+#snake{
+  display: block
   padding-top: 90px;
-}
-
-.board-head {
-  width: 100%;
-  height: 70px;
-  background-color: #4a752c;
+  width: 50%;
+  margin: auto;
 }

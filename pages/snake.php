@@ -31,16 +31,15 @@
             echo "<a class='nav--logout' href='../php/logout.php'>logout</a>";
           }
          ?>
-         <li><a href="snake.html">Snake</a></li>
+         <li><a href="snake.php">Snake</a></li>
       </ul>
     </nav>
   </header>
   <main>
-  <div class="wholeboard">
-    <div class="board-head">
-      <p>Hallo</p>
-    </div>
-  </div>
+    <canvas id="snake" width="608" height="608"></canvas>
+    <script src="../js/snake.js">
+
+    </script>
   </main>
 </body>
 

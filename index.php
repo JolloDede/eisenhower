@@ -30,7 +30,7 @@
             echo "<a class='nav--logout' href='php/logout.php'>logout</a>";
           }
          ?>
-         <li><a href="pages/snake.html">Snake</a></li>
+         <li><a href="pages/snake.php">Snake</a></li>
       </ul>
     </nav>
   </header>
