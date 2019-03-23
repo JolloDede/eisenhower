@@ -121,8 +121,4 @@ function draw() {
 
 //call draw function every ms
 
-<<<<<<< HEAD
-let game = setInterval(draw, 200);
-=======
 let game = setInterval(draw, x);
->>>>>>> adcaa1c54da14a91dcb4d788878609e2a83db3a8
