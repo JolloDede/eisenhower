@@ -2,26 +2,52 @@
  *
  * default styling
 */
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700,700i,900");
+@font-face {
+  font-family: "Lato";
+  src: url("../font/Lato-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../font/Lato-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../font/Lato-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
+
 *:focus {
   outline: none;
 }
+
 ::selection {
   background: #cc2020;
   color: #ffffff;
 }
+
 ::-moz-selection {
   background: #cc2020;
   color: #ffffff;
 }
+
 html, body {
   font-family: "Lato", sans-serif;
   width: 100%;
+  height: 100vh;
 }
+
 /*
  *
  * Navigation
@@ -40,18 +66,21 @@ nav {
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
-  z-index: 9999;
+  z-index: 9997;
 }
+
 nav li {
   display: inline-block;
   padding: 0 20px;
 }
+
 nav li a {
   position: relative;
   font-size: 19px;
   text-decoration: none;
   color: #000000;
 }
+
 nav li a:before {
   content: "";
   position: absolute;
@@ -64,6 +93,7 @@ nav li a:before {
   transform-origin: left;
   transition: transform 0.3s;
 }
+
 nav li a:hover:before {
   transform: scaleX(1);
 }
@@ -79,6 +109,7 @@ nav li a:hover:before {
   cursor: pointer;
   transition-duration: 0.3s;
 }
+
 .nav--logout:hover {
   color: #cc2020;
 }
@@ -88,13 +119,14 @@ nav li a:hover:before {
  * index.html
 */
 .main--welcomeUser {
-  margin-top: 120px;
+  padding-top: 120px;
   text-align: center;
 }
 
-form {
+form.login {
   width: 350px;
-  margin: 120px auto 0;
+  margin: 0 auto;
+  padding-top: 120px;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -165,12 +197,28 @@ input:first-child {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="date"] {
   width: 250px;
   padding: 3px 3px;
-  border-radius: 5px;
   font-size: 17px;
   border: 2px solid #000000;
+  border-radius: 5px;
+  background: transparent;
+  color: #666666;
+  caret-color: #cc2020;
+  -moz-caret-color: #cc2020;
+  -webkit-caret-color: #cc2020;
+}
+
+textarea {
+  min-width: 250px;
+  max-width: 250px;
+  resize: none;
+  padding: 3px 3px;
+  font-size: 17px;
+  border: 2px solid #000000;
+  border-radius: 5px;
   background: transparent;
   color: #666666;
   caret-color: #cc2020;
@@ -179,17 +227,85 @@ input[type="password"] {
 }
 
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="date"]:focus,
+textarea:focus {
   border: 2px solid #cc2020;
   outline: none;
 }
 
-input[name="uname"]:focus ~ label[for="uname"],
-input[name="passw"]:focus ~ label[for="passw"],
-input[name="uname"]:not(:placeholder-shown) ~ label[for="uname"],
-input[name="passw"]:not(:placeholder-shown) ~ label[for="passw"] {
+input[name="uname"]:focus~label[for="uname"],
+input[name="passw"]:focus~label[for="passw"],
+input[name="date"]:focus~label[for="date"],
+input[name="link"]:focus~label[for="link"],
+input[name="uname"]:not(:placeholder-shown)~label[for="uname"],
+input[name="passw"]:not(:placeholder-shown)~label[for="passw"],
+input[name="date"]:not(:placeholder-shown)~label[for="date"],
+input[name="link"]:not(:placeholder-shown)~label[for="link"] {
   color: #000000;
   transform: scale(0.9) translate(-20px, -28px);
+}
+
+textarea:focus~label[for="description"],
+textarea:not(:placeholder-shown)~label[for="description"] {
+  color: #000000;
+  transform: scale(0.9) translate(-20px, -55px);
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox--text {
+  display: inline;
+  position: relative;
+  top: -22px;
+  left: 25px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.checkbox {
+  display: block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-top: 2px solid #000000;
+  border-radius: 0 0 5px 5px;
+}
+
+.span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 0 0 5px 5px !important;
+  background: #00000020;
+}
+
+.span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  transition: 0.2s;
+  border-radius: 0 0 5px 5px;
+  background: #cc2020;
+}
+
+.cbox:checked+.span::after {
+  height: 100%;
+}
+
+.login--failed {
+  margin-top: 10px;
+  text-align: center;
+  color: #cc2020;
+  font-weight: bold;
 }
 
 /*
@@ -198,7 +314,8 @@ input[name="passw"]:not(:placeholder-shown) ~ label[for="passw"] {
 */
 .eh--container {
   width: 80%;
-  margin: 90px auto 0;
+  margin: 0 auto;
+  padding-top: 90px;
   height: 480px;
 }
 
@@ -208,10 +325,12 @@ input[name="passw"]:not(:placeholder-shown) ~ label[for="passw"] {
   width: 50%;
   border-bottom: 2px solid #000000;
 }
+
 .eh--element:nth-child(1),
 .eh--element:nth-child(2) {
   border-top: 2px solid #000000;
 }
+
 .eh--element:nth-child(odd)::after {
   content: "";
   position: absolute;
@@ -231,10 +350,12 @@ input[name="passw"]:not(:placeholder-shown) ~ label[for="passw"] {
   -moz-user-select: none;
   -webkit-user-select: none;
 }
+
 .eh--element .eh--content {
   overflow-y: scroll;
   height: 200px;
 }
+
 .eh--element p {
   display: inline-block;
   margin: 4px 0 0 10px;
@@ -242,57 +363,171 @@ input[name="passw"]:not(:placeholder-shown) ~ label[for="passw"] {
   transition: 0.3s;
   border-bottom: 1px solid #00000000;
 }
+
 .eh--element p:hover {
   color: #cc2020;
   border-bottom: 1px solid black;
 }
 
-.nwnd h1 { background: #c0e8a0; }
-.wnd  h1 { background: #f5f78f; }
-.nwd  h1 { background: #f4d577; }
-.wd   h1 { background: #f79b9b; }
+.nwnd h1 {
+  background: #c0e8a0;
+}
+
+.wnd h1 {
+  background: #f5f78f;
+}
+
+.nwd h1 {
+  background: #f4d577;
+}
+
+.wd h1 {
+  background: #f79b9b;
+}
+
+.newentry--button,
+.query--delete {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  padding: 3px 3px;
+  text-align: center;
+  font-size: 17px;
+  background: transparent;
+  color: #666666;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.query--delete {
+  margin-top: 20px;
+}
+
+.newentry--button:hover,
+.query--delete:hover {
+  background: #e3e3e3;
+  border: 2px solid #cc2020;
+  color: #222222;
+}
+
+.newentry--bg,
+.queryvalue--bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #00000070;
+  z-index: 9998;
+  filter: blur(0px);
+}
+
+#newentry--form {
+  display: none
+}
+
+#newentry--form.newentry--form {
+  display: block;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  background: #d3d3d3;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+#queryvalue--display {
+  display: none
+}
+
+#queryvalue--display.queryvalue--display {
+  display: block;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  padding: 40px;
+  background: #d3d3d3;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.queryvalue--table {
+  border-collapse: collapse;
+}
+
+.queryvalue--table tr {
+  border: 1px solid #000000;
+  line-height: 25px;
+  vertical-align: top;
+}
+
+.queryvalue--table th {
+  text-align: left;
+  padding: 5px;
+}
+
+.queryvalue--table td {
+  padding: 5px 5px 5px 10px;
+}
+
+.newentry--exit {
+  position: absolute;
+  top: -13px;
+  right: -13px;
+  width: 26px;
+  height: 26px;
+  background: #ef3e3e;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.exit--1 {
+  position: absolute;
+  right: 3px;
+  top: 11px;
+  height: 4px;
+  width: 20px;
+  border-radius: 10px;
+  background: black;
+  transform: rotate(45deg);
+}
+
+.exit--2 {
+  position: absolute;
+  right: 3px;
+  top: 11px;
+  height: 4px;
+  width: 20px;
+  border-radius: 10px;
+  background: black;
+  transform: rotate(-45deg);
+}
 
 /*
  *
  * footer
 */
-footer {
+
+.wholeboard {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 105px;
-  padding-top: 30px;
-  background: #e3e3e3;
-  border-top: 2px solid #000000;
-  box-shadow: 0px -1px 20px rgba(0, 0, 0, 0.2);
-}
-.whatwasused img {
-  position: relative;
-  width: 80px;
-  cursor: help;
-  z-index: 2;
+  width: 600px;
+  height: 600px;
+  display: block;
+  padding-top: 90px;
 }
 
-.use1-text, .use2-text,
-.use3-text, .use4-text,
-.use5-text {
-  position: relative;
-  top: -90px;
-  display: inline-block;
-  width: 80px;
-  height: 0px;
-  font-weight: bold;
-  opacity: 0;
-  transition: 0.3s;
-  z-index: 1;
-}
-
-.use1-bild:hover ~ .use1-text,
-.use2-bild:hover ~ .use2-text,
-.use3-bild:hover ~ .use3-text,
-.use4-bild:hover ~ .use4-text,
-.use5-bild:hover ~ .use5-text {
-  top: -110px;
-  opacity: 1;
+.board-head {
+  width: 100%;
+  height: 70px;
+  background-color: #4a752c;
 }

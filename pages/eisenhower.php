@@ -16,6 +16,7 @@
   <meta name="author" content="Dennis & Marcel" />
   <title>Dennis' & Marcel's Projekt</title>
   <link href="../css/main.css" rel="Stylesheet">
+  <script src="../js/main.js"></script>
 </head>
 
 <body>
@@ -30,6 +31,7 @@
             echo "<a class='nav--logout' href='../php/logout.php'>logout</a>";
           }
          ?>
+         <li><a href="snake.php">Snake</a></li>
       </ul>
     </nav>
   </header>
@@ -44,8 +46,14 @@
         $u = $_SESSION["user"];
         $sel = "SELECT * FROM eisenhower where user='$u'";
         $erg = mysqli_query($conn, $sel);
-        if (mysqli_num_rows($erg) > 0) {
-            ?>
+        $temp = 0; $counter = 0;
+        if (mysqli_num_rows($erg) >= 0) {
+          while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
+            $temp += strtotime($line["etime"]);
+            $counter++;
+          }
+          $average = $temp / $counter;
+    ?>
 
     <div class="eh--container">
       <div class="eh--element wnd">
@@ -53,12 +61,15 @@
 
         <div class="eh--content">
           <?php
+          $erg = mysqli_query($conn, $sel);
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
-              if ($line["importance"] == 1) {
-                echo "<p onclick=javascript:void(0)>";
-                echo $line["link"];
-                echo "</p><br>";
+            if ($line["importance"] == 1) {
+              $d1 = strtotime($line["etime"]);
+              $d2 = ceil(($d1-time())/60/60/24);
+              if ($d1 > $average) {
+                echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - ".$d2." Tage</strong></p><br>";
               }
+            }
           }
           ?>
         </div>
@@ -70,11 +81,15 @@
           <?php
           $erg = mysqli_query($conn, $sel);
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
-              if ($line["importance"] == 1) {
-                echo "<p onclick=javascript:void(0)>";
-                echo $line["link"];
-                echo "</p><br>";
+            if ($line["importance"] == 1) {
+              $d1 = strtotime($line["etime"]);
+              $d2 = ceil(($d1-time())/60/60/24);
+              if ($d1 <= $average) {
+                if ($d2 < 2) { $days = "Tag"; }
+                else { $days = "Tage"; }
+                echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - $d2 $days</strong></p><br>";
               }
+            }
           }
           ?>
         </div>
@@ -86,11 +101,13 @@
           <?php
           $erg = mysqli_query($conn, $sel);
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
-              if ($line["importance"] == 0) {
-                echo "<p onclick=javascript:void(0)>";
-                echo $line["link"];
-                echo "</p><br>";
+            if ($line["importance"] == 0) {
+              $d1 = strtotime($line["etime"]);
+              $d2 = ceil(($d1-time())/60/60/24);
+              if ($d1 > $average) {
+                echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - ".$d2." Tage</strong></p><br>";
               }
+            }
           }
           ?>
         </div>
@@ -102,11 +119,15 @@
           <?php
           $erg = mysqli_query($conn, $sel);
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
-              if ($line["importance"] == 0) {
-                echo "<p onclick=javascript:void(0)>";
-                echo $line["link"];
-                echo "</p><br>";
+            if ($line["importance"] == 0) {
+              $d1 = strtotime($line["etime"]);
+              $d2 = ceil(($d1-time())/60/60/24);
+              if ($d1 <= $average) {
+                if ($d2 < 2) { $days = "Tag"; }
+                else { $days = "Tage"; }
+                echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - $d2 $days</strong></p><br>";
               }
+            }
           }
           ?>
         </div>
@@ -118,26 +139,46 @@
       }
      ?>
 
-     <div class="">
-       <p onclick="newEtry()">Neuer Eintrag</p>
+     <p id="test"></p>
+
+     <p class="newentry--button" onclick="newEntry()">Neuer Eintrag</p>
+     <div id="newentry--form" class="">
+       <form action="../php/data.php" method="post">
+         <fieldset>
+           <input style="font-size: inherit;" name="date" type="date" id="date" placeholder="&nbsp;" required>
+           <label class="form--label" for="date">Due Date</label><br>
+
+           <input name="link" type="text" id="link" placeholder="&nbsp;" required>
+           <label class="form--label" for="link">Link</label><br>
+
+           <textarea id="description" name="description" placeholder="&nbsp;"></textarea>
+           <label class="form--label" for="description">Beschreibung</label><br>
+
+           <label class="checkbox">
+             <input name="importance" class="cbox" id="importance" type="checkbox">
+             <span class="span"></span>
+           </label>
+           <label for="importance" class="checkbox--text">Wichtig</label>
+
+           <input type="submit" class="newentry--button" value="Hinzufügen">
+         </fieldset>
+       </form>
+       <div class="newentry--exit" onclick="newEntryClose()">
+         <div class="exit--1"></div>
+         <div class="exit--2"></div>
+       </div>
      </div>
 
+     <div id="queryvalue--display">
+       <div class="newentry--exit" onclick="queryvalueClose()">
+         <div class="exit--1"></div>
+         <div class="exit--2"></div>
+       </div>
+     </div>
+     <div id="queryvalue--bg" class="" onclick="queryvalueClose()"></div>
+     <div id="newentry--bg" class="" onclick="newEntryClose()"></div>
+
   </main>
-  <footer>
-    <div align="center" class="whatwasused">
-      <img class="use1-bild" src="../img/use/HTML.svg">
-      <img class="use2-bild" src="../img/use/CSS.svg">
-      <img class="use3-bild" src="../img/use/JS.svg">
-      <img class="use4-bild" src="../img/use/PHP.svg">
-      <img class="use5-bild" src="../img/use/MySQL.svg">
-      <br>
-      <div class="use1-text">.html</div>
-      <div class="use2-text">.css</div>
-      <div class="use3-text">.js</div>
-      <div class="use4-text">.php</div>
-      <div class="use5-text">.sql</div>
-    </div>
-  </footer>
 </body>
 
 </html>

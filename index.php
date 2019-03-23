@@ -30,15 +30,15 @@
             echo "<a class='nav--logout' href='php/logout.php'>logout</a>";
           }
          ?>
+         <li><a href="pages/snake.html">Snake</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <p><?php echo $_SESSION['fail']; ?></p> <!-- //TODO: Chasch du das bitte obe abe hole xd 
     <?php
       if (!$login) {
         echo
-        '<form action="php/login.php" method="post">
+        '<form class="login" action="php/login.php" method="post">
           <fieldset>
             <legend>LOGIN</legend>
             <input name="uname" type="text" id="uname" placeholder="&nbsp;" required autofocus>
@@ -58,9 +58,14 @@
       } else {
         echo "<p class='main--welcomeUser'>Willkommen, ".$_SESSION["user"]."</p>";
       }
-    ?>
+      if (isset($_SESSION['fail'])) {
+        if ($_SESSION['fail'] == "Fail") {
+          echo "<p class='login--failed'>Login failed !</p>";
+        }
+      }
+      ?>
   </main>
-  <footer>
+  <!-- <footer>
     <div align="center" class="whatwasused">
       <img class="use1-bild" src="img/use/HTML.svg">
       <img class="use2-bild" src="img/use/CSS.svg">
@@ -74,7 +79,7 @@
       <div class="use4-text">.php</div>
       <div class="use5-text">.sql</div>
     </div>
-  </footer>
+  </footer> -->
 </body>
 
 </html>

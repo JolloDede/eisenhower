@@ -1,7 +1,13 @@
 <?php
   session_start();
-  $uname = htmlspecialchars($_POST["uname"]);
-  $pw = htmlspecialchars($_POST["passw"]);
+  $uname = trim($_POST["uname"]);
+  $uname = htmlentities($uname);
+  $uname = stripslashes($uname);
+
+  $pw = trim($_POST["passw"]);
+  $pw = htmlentities($pw);
+  $pw = stripslashes($pw);
+
   if (isset($_POST["uname"]) && isset($_POST["passw"])) {
     $conn = mysqli_connect('localhost', $uname, $pw, 'eh');
     mysqli_set_charset($conn, "utf8");
@@ -11,6 +17,7 @@
     } else {
       $_SESSION["user"] = $uname;
       $_SESSION["pw"] = $pw;
+      $_SESSION["fail"] = "Success";
       header("location:../index.php");
     }
   }else{
