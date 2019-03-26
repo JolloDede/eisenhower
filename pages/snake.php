@@ -24,15 +24,15 @@
   <header>
     <nav>
       <ul>
-        <li><a href="https://github.com/jollodede" target="_blank">Dennis</a></li>
-        <li><a href="https://github.com/thebauzz" target="_blank">Marcel</a></li>
+        <!-- <li><a href="https://github.com/jollodede" target="_blank">Dennis</a></li>
+        <li><a href="https://github.com/thebauzz" target="_blank">Marcel</a></li> -->
         <li><a href="..">Startseite</a></li>
         <?php
           if ($login) {
             echo "<a class='nav--logout' href='../php/logout.php'>logout</a>";
           }
          ?>
-         <li><a href="snake.php">Snake</a></li>
+         <li><a href="eisenhower.php">Eisenhower</a></li>
       </ul>
     </nav>
   </header>
