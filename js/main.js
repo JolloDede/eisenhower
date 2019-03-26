@@ -28,8 +28,8 @@ function newEntry() {
   if(month < 10){
     month = '0' + month
   }
-  today = year+'-'+month+'-'+day;
-  document.getElementById("date").setAttribute("min", today);
+  today = year+'-'+month+'-'+day
+  document.getElementById("date").setAttribute("min", today)
 }
 
 function newEntryClose() {

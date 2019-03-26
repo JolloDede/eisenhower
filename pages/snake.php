@@ -41,6 +41,9 @@
       <canvas id="snake" width="608px" height="608px"></canvas>
       <script src="../js/snake.js"></script>
     </div>
+    <div id="snake--display">
+      <p class="snake--button" onclick="restart()">Neustarten</p>
+    </div>
   </main>
 </body>
 
