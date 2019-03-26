@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="author" content="Dennis & Marcel" />
-  <title>Dennis' & Marcel's Projekt</title>
+  <title>MD Projekt</title>
   <link href="img/MD-Logo.png" rel="Icon">
   <link href="css/main.css" rel="Stylesheet">
   <script src="js/main.js"></script>
