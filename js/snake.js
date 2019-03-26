@@ -41,6 +41,7 @@ let d;
 
 document.addEventListener('keydown', direction);
 
+setTimeout(
 function direction(event) {
   let key = event.keyCode;
   if (key == 37 && d != "RIGHT") {
@@ -52,7 +53,8 @@ function direction(event) {
   } else if (key == 40 && d != "UP") {
     d = "DOWN";
   }
-}
+}, 200);
+
 // check collision function
 function collision(head, array) {
   for (let i = 0; i < array.length; i++) {
