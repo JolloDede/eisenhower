@@ -14,7 +14,7 @@ const foodImg = new Image();
 foodImg.src = "../img/food.png";
 
 const snakeHeadImg =  new Image();
-snakeHeadImg.src = "../img/snakeHead.png";
+//  snakeHeadImg.src = "../img/snakeHead.png";
 
 //create Snake
 
@@ -41,13 +41,12 @@ let d;
 
 document.addEventListener('keydown', test);
 
-let lastTime;
+let lastTime = 0;
 
 // Test if 200 ms are past since the last push of a button
 function test(event) {
   if (Date.now() - lastTime >= 200) {
     lastTime = Date.now();
-  }else {
     direction(event);
   }
 }
