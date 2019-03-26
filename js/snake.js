@@ -43,6 +43,7 @@ document.addEventListener('keydown', test);
 
 let lastTime;
 
+// Test if 200 ms are past since the last push of a button
 function test(event) {
   if (Date.now() - lastTime >= 200) {
     lastTime = Date.now();
