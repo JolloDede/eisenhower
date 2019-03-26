@@ -413,7 +413,8 @@ input[type="checkbox"] {
 }
 
 .newentry--button:hover,
-.query--delete:hover {
+.query--delete:hover,
+.snake--button:hover {
   background: #e3e3e3;
   border: 2px solid #cc2020;
   color: #222222;
