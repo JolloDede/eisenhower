@@ -15,6 +15,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="author" content="Dennis & Marcel" />
   <title>Dennis' & Marcel's Projekt</title>
+  <link href="../img/MD-Logo.png" rel="Icon">
   <link href="../css/main.css" rel="Stylesheet">
   <script src="../js/main.js"></script>
 </head>
@@ -37,7 +38,7 @@
   </header>
   <main>
     <div align="center">
-      <canvas id="snake" width="608" height="608"></canvas>
+      <canvas id="snake" width="608px" height="608px"></canvas>
       <script src="../js/snake.js"></script>
     </div>
   </main>
