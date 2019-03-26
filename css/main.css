@@ -518,8 +518,8 @@ input[type="checkbox"] {
  * footer
 */
 
-#snake{
-  display: block
+#snake {
+  display: block;
   padding-top: 90px;
   width: 50%;
   margin: auto;

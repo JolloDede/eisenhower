@@ -36,10 +36,10 @@
     </nav>
   </header>
   <main>
-    <canvas id="snake" width="608" height="608"></canvas>
-    <script src="../js/snake.js">
-
-    </script>
+    <div align="center">
+      <canvas id="snake" width="608" height="608"></canvas>
+      <script src="../js/snake.js"></script>
+    </div>
   </main>
 </body>
 
