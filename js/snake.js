@@ -39,9 +39,18 @@ let score = 0;
 
 let d;
 
-document.addEventListener('keydown', direction);
+document.addEventListener('keydown', test);
 
-setTimeout(
+let lastTime;
+
+function test(event) {
+  if (Date.now() - lastTime >= 200) {
+    lastTime = Date.now();
+  }else {
+    direction(event);
+  }
+}
+
 function direction(event) {
   let key = event.keyCode;
   if (key == 37 && d != "RIGHT") {
@@ -53,7 +62,8 @@ function direction(event) {
   } else if (key == 40 && d != "UP") {
     d = "DOWN";
   }
-}, 200);
+}
+
 
 // check collision function
 function collision(head, array) {
