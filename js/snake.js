@@ -13,6 +13,9 @@ ground.src = "../img/ground.png";
 const foodImg = new Image();
 foodImg.src = "../img/food.png";
 
+const snakeHeadImg =  new Image();
+snakeHeadImg.src = "../img/snakeHead.png";
+
 //create Snake
 
 let snake = [];
@@ -68,8 +71,10 @@ function draw() {
   for (let i = 0; i < snake.length; i++) {
     if (i == 0) {
       ctx.fillStyle = "green";
+      // ctx.drawImage(snakeHeadImg, snake.x, snake.y);
     } else {
       ctx.fillStyle = "white";
+      // ctx.drawImage(snakeImg, snake[i].x, snake[i].y);
     }
     ctx.fillRect(snake[i].x, snake[i].y, box, box);
 
