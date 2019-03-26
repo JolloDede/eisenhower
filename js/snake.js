@@ -127,6 +127,7 @@ function draw() {
 
   if (snakex < box || snakex > 17 * box || snakey < 3 * box || snakey > 17 * box || collision(newHead, snake)) {
     clearInterval(game);
+    playagain();
   }
 
   snake.unshift(newHead);
@@ -139,3 +140,24 @@ function draw() {
 //call draw function every ms
 
 let game = setInterval(draw, x);
+
+function playagain() {
+  lol = document.getElementById("snake--display")
+  lol.classList.add("snake--display")
+}
+
+function restart() {
+  lol.classList.remove("snake--display")
+  i = snake.length
+  while (i >= 1) {
+    snake.pop();
+    i--;
+  }
+  snake[0] = {
+    x: 9 * box,
+    y: 10 * box
+  }
+  d = null
+  score = 0
+  game = setInterval(draw, x)
+}

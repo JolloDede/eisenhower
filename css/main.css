@@ -386,7 +386,8 @@ input[type="checkbox"] {
 }
 
 .newentry--button,
-.query--delete {
+.query--delete,
+.snake--button {
   display: block;
   margin: 0 auto;
   width: 150px;
@@ -447,7 +448,8 @@ input[type="checkbox"] {
   display: none
 }
 
-#queryvalue--display.queryvalue--display {
+#queryvalue--display.queryvalue--display,
+#snake--display.snake--display {
   display: block;
   position: fixed;
   top: 40%;
@@ -458,6 +460,10 @@ input[type="checkbox"] {
   border: 1px solid #000000;
   border-radius: 5px;
   z-index: 9999;
+}
+
+#snake--display {
+  display: none;
 }
 
 .queryvalue--table {
@@ -479,7 +485,8 @@ input[type="checkbox"] {
   padding: 5px 5px 5px 10px;
 }
 
-.newentry--exit {
+.newentry--exit,
+.snake--exit {
   position: absolute;
   top: -13px;
   right: -13px;
