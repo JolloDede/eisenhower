@@ -146,6 +146,7 @@ function playagain() {
   lol.classList.add("snake--display")
 }
 
+// The game gets reseted
 function restart() {
   lol.classList.remove("snake--display")
   i = snake.length
