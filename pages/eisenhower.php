@@ -24,8 +24,8 @@
   <header>
     <nav>
       <ul>
-        <li><a href="https://github.com/jollodede" target="_blank">Dennis</a></li>
-        <li><a href="https://github.com/thebauzz" target="_blank">Marcel</a></li>
+        <!-- <li><a href="https://github.com/jollodede" target="_blank">Dennis</a></li>
+        <li><a href="https://github.com/thebauzz" target="_blank">Marcel</a></li> -->
         <li><a href="..">Startseite</a></li>
         <?php
           if ($login) {

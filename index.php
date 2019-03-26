@@ -28,10 +28,10 @@
         <?php
           if ($login) {
             echo "<li><a href='pages/eisenhower.php'>Eisenhower</a></li>";
+            echo "<li><a href='pages/snake.php'>Snake</a></li>";
             echo "<a class='nav--logout' href='php/logout.php'>logout</a>";
           }
          ?>
-         <li><a href="pages/snake.php">Snake</a></li>
       </ul>
     </nav>
   </header>
