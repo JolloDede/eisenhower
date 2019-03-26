@@ -45,8 +45,6 @@ let lastTime = 0;
 
 // Test if 200 ms are past since the last push of a button
 function test(event) {
-  console.log(Date.now()-lastTime);
-
   if (Date.now() - lastTime >= 150) {
     lastTime = Date.now();
     direction(event);
