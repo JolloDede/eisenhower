@@ -32,6 +32,7 @@
             echo "<a class='nav--logout' href='php/logout.php'>logout</a>";
           }
          ?>
+         <li><a href="pages/profil.php">Profil</a></li>
       </ul>
     </nav>
   </header>
