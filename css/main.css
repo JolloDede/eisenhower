@@ -48,6 +48,9 @@ html, body {
   height: 100vh;
 }
 
+pre{
+  font-family: "Lato";
+}
 /*
  *
  * Navigation
