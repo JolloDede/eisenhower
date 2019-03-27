@@ -119,7 +119,7 @@ nav li a:hover:before {
 
 /*
  *
- * index.html
+ * index.php
 */
 .main--welcomeUser {
   padding-top: 120px;
@@ -313,7 +313,7 @@ input[type="checkbox"] {
 
 /*
  *
- * eisenhower.html
+ * eisenhower.php
 */
 .eh--container {
   width: 80%;
@@ -526,7 +526,7 @@ input[type="checkbox"] {
 
 /*
  *
- * footer
+ * snake.php
 */
 
 #snake {
@@ -535,3 +535,8 @@ input[type="checkbox"] {
   width: 608px;
   margin: auto;
 }
+
+/*
+ *
+ * footer
+*/

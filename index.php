@@ -67,8 +67,8 @@
       }
       ?>
   </main>
-  <!-- <footer>
-    <div align="center" class="whatwasused">
+  <footer>
+    <!-- <div align="center">
       <img class="use1-bild" src="img/use/HTML.svg">
       <img class="use2-bild" src="img/use/CSS.svg">
       <img class="use3-bild" src="img/use/JS.svg">
@@ -80,8 +80,8 @@
       <div class="use3-text">.js</div>
       <div class="use4-text">.php</div>
       <div class="use5-text">.sql</div>
-    </div>
-  </footer> -->
+    </div> -->
+  </footer>
 </body>
 
 </html>
