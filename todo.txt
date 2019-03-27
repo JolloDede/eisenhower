@@ -1,19 +1,15 @@
 WICHTIG
- - Datenbank mit 3 user
  - Footer auf der Startseite
- - Favicon für die Seite
 
 
 LOGIK
-dringend / nicht dringen:
-Von allen Datensätzen wird due-date minus akt-date gerechnet. Von allen Datensätzen wird dann der Durchschnitt berechnet, wie lange man noch Zeit hat. (2 Tage, 9 Tage, 14 Tage = Durchschnitt 8.33 Tage)
-Ist ein einzelnes Projekt unter dem Durchschnitt ist es dringend (2 Tage).
-Ist ein einzelnes Projekt über  dem Durchschnitt ist es nicht drignend (9 Tage, 14 Tage).
 
 
 NICE TO HAVE
+ - Notification wenn etwas in md eingetragen wird
  - Zeistrahl und aufgaben die zu erledigen sind
+ - footer uaf der Startseite
+ - Profilseite
 
 
 LATER
- - Snake??????? plis
