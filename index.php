@@ -1,6 +1,7 @@
 <?php session_start();
   if (isset($_SESSION["user"])) {
     $login = true;
+    $user = $_SESSION["user"];
   } else {
     $login = false;
   }
@@ -29,10 +30,10 @@
           if ($login) {
             echo "<li><a href='pages/eisenhower.php'>Eisenhower</a></li>";
             echo "<li><a href='pages/snake.php'>Snake</a></li>";
+            echo "<a class='nav--profile' href='pages/profil.php'>$user</a>";
             echo "<a class='nav--logout' href='php/logout.php'>logout</a>";
           }
          ?>
-         <li><a href="pages/profil.php">Profil</a></li>
       </ul>
     </nav>
   </header>
@@ -68,19 +69,19 @@
       ?>
   </main>
   <footer>
-    <!-- <div align="center">
-      <img class="use1-bild" src="img/use/HTML.svg">
-      <img class="use2-bild" src="img/use/CSS.svg">
-      <img class="use3-bild" src="img/use/JS.svg">
-      <img class="use4-bild" src="img/use/PHP.svg">
-      <img class="use5-bild" src="img/use/MySQL.svg">
+    <div align="center">
+      <img class="use1-bild" draggable="false" src="img/use/HTML.svg">
+      <img class="use2-bild" draggable="false" src="img/use/CSS.svg">
+      <img class="use3-bild" draggable="false" src="img/use/JS.svg">
+      <img class="use4-bild" draggable="false" src="img/use/PHP.svg">
+      <img class="use5-bild" draggable="false" src="img/use/MySQL.svg">
       <br>
-      <div class="use1-text">.html</div>
-      <div class="use2-text">.css</div>
-      <div class="use3-text">.js</div>
-      <div class="use4-text">.php</div>
-      <div class="use5-text">.sql</div>
-    </div> -->
+      <span class="use1-text">.html</span>
+      <span class="use2-text">.css</span>
+      <span class="use3-text">.js</span>
+      <span class="use4-text">.php</span>
+      <span class="use5-text">.sql</span>
+    </div>
   </footer>
 </body>
 
