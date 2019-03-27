@@ -573,6 +573,7 @@ footer img {
   position: relative;
   height: 70px;
   width: auto;
+  padding: 0 5px;
   cursor: help;
 }
 
@@ -581,6 +582,7 @@ footer span {
   position: relative;
   top: -80px;
   width: 70px;
+  padding: 0 5px;
   text-align: center;
   font-weight: bold;
   transition: 0.3s;
