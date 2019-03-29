@@ -13,7 +13,7 @@ ground.src = "../img/ground.png";
 const foodImg = new Image();
 foodImg.src = "../img/food.png";
 
-const snakeHeadImg =  new Image();
+const snakeHeadImg = new Image();
 //  snakeHeadImg.src = "../img/snakeHead.png";
 
 //create Snake
@@ -160,5 +160,6 @@ function restart() {
   }
   d = null
   score = 0
+  x = 200;
   game = setInterval(draw, x)
 }
