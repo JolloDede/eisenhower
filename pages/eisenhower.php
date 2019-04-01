@@ -46,10 +46,16 @@
     } else {
         $u = $_SESSION["user"];
         $sel = "SELECT * FROM eisenhower where user='$u'";
+        $selmd = "SELECT * FROM eisenhower where user='md'";
         $erg = mysqli_query($conn, $sel);
+        $ergmd = mysqli_query($conn, $selmd);
         $temp = 0; $counter = 0;
-        if (mysqli_num_rows($erg) >= 0) {
+        if (mysqli_num_rows($erg) >= 0 || mysqli_num_rows($ergmd) >= 0) {
           while ($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)) {
+            $temp += strtotime($line["etime"]);
+            $counter++;
+          }
+          while($line = mysqli_fetch_array($ergmd, MYSQLI_ASSOC)){
             $temp += strtotime($line["etime"]);
             $counter++;
           }
@@ -69,6 +75,17 @@
               $d2 = ceil(($d1-time())/60/60/24);
               if ($d1 > $average) {
                 echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - ".$d2." Tage</strong></p><br>";
+              }
+            }
+          }
+
+          $ergmd = mysqli_query($conn, $selmd);
+          while ($line = mysqli_fetch_array($ergmd, MYSQLI_ASSOC)) {
+            if ($line["importance"] == 1) {
+              $d1 = strtotime($line["etime"]);
+              $d2 = ceil(($d1-time())/60/60/24);
+              if ($d1 > $average) {
+                echo "<p onclick='getInformations(".$line["id"].")'>(md) ".$line["link"]."<strong> - ".$d2." Tage</strong></p><br>";
               }
             }
           }
@@ -92,6 +109,19 @@
               }
             }
           }
+
+          $ergmd = mysqli_query($conn, $selmd);
+          while ($line = mysqli_fetch_array($ergmd, MYSQLI_ASSOC)) {
+            if ($line["importance"] == 1) {
+              $d1 = strtotime($line["etime"]);
+              $d2 = ceil(($d1-time())/60/60/24);
+              if ($d1 <= $average && $d2 >= 0) {
+                if ($d2 < 2) { $days = "Tag"; }
+                else { $days = "Tage"; }
+                echo "<p onclick='getInformations(".$line["id"].")'>(md) ".$line["link"]."<strong> - $d2 $days</strong></p><br>";
+              }
+            }
+          }
           ?>
         </div>
       </div>
@@ -107,6 +137,17 @@
               $d2 = ceil(($d1-time())/60/60/24);
               if ($d1 > $average) {
                 echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - ".$d2." Tage</strong></p><br>";
+              }
+            }
+          }
+
+          $ergmd = mysqli_query($conn, $selmd);
+          while ($line = mysqli_fetch_array($ergmd, MYSQLI_ASSOC)) {
+            if ($line["importance"] == 0) {
+              $d1 = strtotime($line["etime"]);
+              $d2 = ceil(($d1-time())/60/60/24);
+              if ($d1 > $average) {
+                echo "<p onclick='getInformations(".$line["id"].")'>(md) ".$line["link"]."<strong> - ".$d2." Tage</strong></p><br>";
               }
             }
           }
@@ -127,6 +168,19 @@
                 if ($d2 < 2) { $days = "Tag"; }
                 else { $days = "Tage"; }
                 echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - $d2 $days</strong></p><br>";
+              }
+            }
+          }
+          
+          $ergmd = mysqli_query($conn, $selmd);
+          while ($line = mysqli_fetch_array($ergmd, MYSQLI_ASSOC)) {
+            if ($line["importance"] == 0) {
+              $d1 = strtotime($line["etime"]);
+              $d2 = ceil(($d1-time())/60/60/24);
+              if ($d1 <= $average && $d2 >= 0) {
+                if ($d2 < 2) { $days = "Tag"; }
+                else { $days = "Tage"; }
+                echo "<p onclick='getInformations(".$line["id"].")'>(md) ".$line["link"]."<strong> - $d2 $days</strong></p><br>";
               }
             }
           }
