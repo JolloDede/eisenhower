@@ -1,5 +1,4 @@
 WICHTIG
- - Footer auf der Startseite
 
 
 LOGIK
