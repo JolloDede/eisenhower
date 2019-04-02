@@ -171,7 +171,7 @@
               }
             }
           }
-          
+
           $ergmd = mysqli_query($conn, $selmd);
           while ($line = mysqli_fetch_array($ergmd, MYSQLI_ASSOC)) {
             if ($line["importance"] == 0) {
@@ -234,7 +234,17 @@
        if ($d2 < 0) {
          if ($d2 < 2) { $days = "Tag"; }
          else { $days = "Tage"; }
-         echo "<p onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - $d2 $days</strong></p><br>";
+         echo "<p class='eh--abgelaufen' onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - $d2 $days</strong></p><br>";
+       }
+     }
+     $ergmd = mysqli_query($conn, $selmd);
+     while ($line = mysqli_fetch_array($ergmd, MYSQLI_ASSOC)) {
+       $d1 = strtotime($line["etime"]);
+       $d2 = ceil(($d1-time())/60/60/24);
+       if ($d2 < 0) {
+         if ($d2 < 2) { $days = "Tag"; }
+         else { $days = "Tage"; }
+         echo "<p class='eh--abgelaufen' onclick='getInformations(".$line["id"].")'>(md) ".$line["link"]."<strong> - $d2 $days</strong></p><br>";
        }
      }
    }
