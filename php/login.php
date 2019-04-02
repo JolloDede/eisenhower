@@ -3,7 +3,7 @@
   $uname = trim($_POST["uname"]);
   $uname = htmlentities($uname);
   $uname = stripslashes($uname);
-  $uname = strtolower($uname);
+  // $uname = strtolower($uname);
 
   $pw = trim($_POST["passw"]);
   $pw = htmlentities($pw);
