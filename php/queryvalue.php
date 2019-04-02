@@ -36,6 +36,6 @@
         <td><pre>$description</pre></td>
       </tr>
     </table>
-    <p id='query--delete' class='query--delete' onclick='queryDelete($id)'>Eintrag löschen</p>";
-
+    <p id='query--delete' class='query--delete' onclick='queryDelete($id)'>Eintrag löschen</p>
+    ";
 ?>
