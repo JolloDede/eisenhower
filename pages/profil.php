@@ -43,7 +43,7 @@
     <?php
       $user = $_SESSION["user"];
       echo $user;
-      $conn = mysqli_connect('localhost', $_SESSION["user"], $_SESSION["pw"], 'snake');
+      $conn = mysqli_connect('localhost', $_SESSION["user"], $_SESSION["pw"], 'eh');
       if (!$conn) {
         die("Connection failed");
       }else{
@@ -53,7 +53,6 @@
           echo $line;
         }
       }
-      echo "Snake score";
      ?>
   </main>
 </body>
