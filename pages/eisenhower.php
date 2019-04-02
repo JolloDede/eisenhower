@@ -31,7 +31,7 @@
         <li><a href="snake.php">Snake</a></li>
         <?php
         if ($login) {
-          echo "<a class='nav--profile' href='pages/profil.php'>$user</a>";
+          echo "<a class='nav--profile' href='profil.php'>$user</a>";
           echo "<a class='nav--logout' href='php/logout.php'>logout</a>";
         }
          ?>

@@ -42,15 +42,16 @@
   <main>
     <?php
       $user = $_SESSION["user"];
-      echo $user;
+      echo $user." ";
       $conn = mysqli_connect('localhost', $_SESSION["user"], $_SESSION["pw"], 'eh');
+      mysqli_set_charset($conn, "utf8");
       if (!$conn) {
         die("Connection failed");
       }else{
         $sel = "SELECT score FROM snake Where user='$user'";
         $erg = mysqli_query($conn, $sel);
         while($line = mysqli_fetch_array($erg, MYSQLI_ASSOC)){
-          echo $line;
+          echo $line["score"];
         }
       }
      ?>
