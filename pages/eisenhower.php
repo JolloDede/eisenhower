@@ -1,9 +1,9 @@
 <?php session_start();
-  if (!isset($_SESSION["user"])) {
-    header("Location: ..");
-    $login = false;
-  } else {
+  if (isset($_SESSION["user"])) {
     $login = true;
+    $user = $_SESSION["user"];
+  } else {
+    $login = false;
   }
 ?>
 <!DOCTYPE html>
@@ -27,12 +27,14 @@
         <!-- <li><a href="https://github.com/jollodede" target="_blank">Dennis</a></li>
         <li><a href="https://github.com/thebauzz" target="_blank">Marcel</a></li> -->
         <li><a href="..">Startseite</a></li>
+        <li><a href="eisenhower.php">Eisenhower</a></li>
+        <li><a href="snake.php">Snake</a></li>
         <?php
-          if ($login) {
-            echo "<a class='nav--logout' href='../php/logout.php'>logout</a>";
-          }
+        if ($login) {
+          echo "<a class='nav--profile' href='pages/profil.php'>$user</a>";
+          echo "<a class='nav--logout' href='php/logout.php'>logout</a>";
+        }
          ?>
-         <li><a href="snake.php">Snake</a></li>
       </ul>
     </nav>
   </header>
@@ -234,7 +236,7 @@
        if ($d2 < 0) {
          if ($d2 < 2) { $days = "Tag"; }
          else { $days = "Tage"; }
-         echo "<p class='eh--abgelaufen' onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - $d2 $days</strong></p><br>";
+         echo "<p class='eh--abgelaufen' onclick='getInformations(".$line["id"].")'>".$line["link"]."<strong> - $d2 $days</strong></p>";
        }
      }
      $ergmd = mysqli_query($conn, $selmd);
@@ -244,7 +246,7 @@
        if ($d2 < 0) {
          if ($d2 < 2) { $days = "Tag"; }
          else { $days = "Tage"; }
-         echo "<p class='eh--abgelaufen' onclick='getInformations(".$line["id"].")'>(md) ".$line["link"]."<strong> - $d2 $days</strong></p><br>";
+         echo "<p class='eh--abgelaufen' onclick='getInformations(".$line["id"].")'>(md) ".$line["link"]."<strong> - $d2 $days</strong></p>";
        }
      }
    }

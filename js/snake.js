@@ -126,20 +126,21 @@ function draw() {
   // game over
 
   if (snakex < box || snakex > 17 * box || snakey < 3 * box || snakey > 17 * box || collision(newHead, snake)) {
-    clearInterval(game);
-    playagain();
+    clearInterval(game)
+    playagain()
   }
 
-  snake.unshift(newHead);
+  snake.unshift(newHead)
 
-  ctx.fillStyle = "white";
-  ctx.font = "42px Lato";
-  ctx.fillText(score, box * 2, box * 1.6);
+  ctx.fillStyle = "white"
+  ctx.font = "42px Lato"
+  ctx.fillText(score, box * 2, box * 1.6)
+  // ctx.fillText(highscore, 550, box * 1.6)
 }
 
-//call draw function every ms
 
-let game = setInterval(draw, x);
+//call draw function every ms
+let game = setInterval(draw, x)
 
 function playagain() {
   lol = document.getElementById("snake--display")

@@ -10,3 +10,9 @@ CREATE TABLE eisenhower(
   importance boolean,
   PRIMARY key(id)
 );
+
+CREATE TABLE snake(
+  user varchar(20) not null,
+  score int,
+  PRIMARY key(user)
+);
